@@ -43,26 +43,17 @@ class App extends React.Component {
                             <Menu className="Menu" onClick={this.handleClick}
                                   selectedKeys={[this.state.current]}
                                   mode="horizontal">
-                                <Menu.Item key={`${this.props.match.path}/index`}>主页</Menu.Item>
-                                <Menu.Item key={`${this.props.match.path}/article`}>文章</Menu.Item>
-                                <Menu.Item key="/management">
-                                    <a
-                                        title={"management"}
-                                        href={"/management"}
-                                        target="_parent"
-                                        rel="noopener noreferrer">
-                                        <RightCircleTwoTone className="array-router"/>
-                                    </a>
-                                </Menu.Item>
+                                <Menu.Item key={`/index`}>主页</Menu.Item>
+                                <Menu.Item key={`/article`}>文章</Menu.Item>
                             </Menu>
                         </Col>
                     </Row>
                 </Affix>
 
                 <Switch>
-                    <Route path={`${this.props.match.path}/index`} component={Home}/>
-                    <Route path={`${this.props.match.path}/article`} component={Article}/>
-                    <Redirect path={`${this.props.match.path}/`} to={{pathname: `${this.props.match.path}/index`}}/>
+                    <Route path={`/index`} component={Home}/>
+                    <Route path={`/article`} component={Article}/>
+                    <Redirect path={`/`} to={{pathname: `/index`}}/>
                 </Switch>
                 <IcpLabel/>
                 <BackTop>
