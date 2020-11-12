@@ -7,7 +7,6 @@ import IcpLabel from "../../components/icp/IcpLabel";
 import {withRouter} from "react-router-dom";
 import "./App.less"
 import Home from "./index/Home";
-import RightCircleTwoTone from "@ant-design/icons/lib/icons/RightCircleTwoTone";
 import {postVisited} from "../../api/ApiCommon";
 import {GetCustomerTraceId} from "../../utils/LocalStorageUtil";
 
