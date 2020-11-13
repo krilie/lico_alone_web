@@ -2,47 +2,50 @@
 import './App.css';
 import 'bulma/css/bulma.css'
 import React from "react";
-import {getIcpInfo} from "./api/ApiCommon";
+import IcpLabel from "./components/IcpLabel";
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            icpInfo:{}
-        }
-    }
-
-    componentDidMount() {
-        getIcpInfo().then(res=>{
-            this.setState({
-                icpInfo:res.data.data
-            })
-        })
-    }
-
     render() {
-        let {icpInfo} = this.state;
-        if (icpInfo === {})
-            icpInfo = ""
-        else
-            icpInfo = icpInfo.link
         return (
             <div className="viewer">
-                <div className="columns">
-                    <div className="column">
-                        {icpInfo}
-                    </div>
-                    <div className="column">
-                        Second column
-                    </div>
-                    <div className="column">
-                        Third column
-                    </div>
-                    <div className="column">
-                        Fourth column
+                <div className="container">
+                    <div className="tile is-ancestor">
+                        <div className="tile is-vertical is-8">
+                            <div className="tile">
+                                <div className="tile is-parent is-vertical">
+                                    <article className="tile is-child box">
+
+                                    </article>
+                                    <article className="tile is-child box">
+
+                                    </article>
+                                </div>
+                                <div className="tile is-parent">
+                                    <article className="tile is-child box">
+
+                                    </article>
+                                </div>
+                            </div>
+                            <div className="tile is-parent">
+                                <article className="tile is-child box">
+
+                                </article>
+                            </div>
+                        </div>
+                        <div className="tile is-parent">
+                            <article className="tile is-child box">
+
+                            </article>
+                        </div>
                     </div>
                 </div>
+
+                <footer className="footer">
+                    <div className="content has-text-centered">
+                        <IcpLabel/>
+                    </div>
+                </footer>
             </div>
         );
     }
