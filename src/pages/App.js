@@ -22,9 +22,11 @@ class App extends React.Component {
                 <div className="container">
                     <div>the menu</div>
                     <Switch>
-                        <Route path={`/home`} component={HomePage}/>
-                        <Route path={`/article`} component={ArticlePage}/>
-                        <Redirect path={`/`} to={{pathname: `/home`}}/>
+                        <div className="content-viewer">
+                            <Route path={`/home`} component={HomePage}/>
+                            <Route path={`/article`} component={ArticlePage}/>
+                            <Redirect path={`/`} to={{pathname: `/home`}}/>
+                        </div>
                     </Switch>
                 </div>
 

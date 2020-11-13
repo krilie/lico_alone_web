@@ -1,3 +1,6 @@
 .viewer{
     margin: auto;
 }
+.content-viewer{
+    /*min-height: 400px;*/
+}
