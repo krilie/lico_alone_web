@@ -1,0 +1,18 @@
+.appVersion {
+  margin: 0;
+  max-width: 100%;
+  min-width: 1%;
+  background-color: #fff;
+  padding: 3px;
+}
+
+.appVersion div{
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pointer-able{
+  cursor: pointer;
+}
