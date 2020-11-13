@@ -4,3 +4,27 @@
 .content-viewer{
     /*min-height: 400px;*/
 }
+.menu-view{
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    background-color: #f6f8f3;
+    font-size: 15px;
+    color: #ecf5e1;
+}
+.menu-view a,strong{
+    font-weight: 900;
+    font-size: 20px;
+    color: coral;
+}
+
+.menu-view a:hover{
+    font-weight: 900;
+    font-size: 20px;
+    color: #ff0000;
+}
+
+.menu-view .menu-logo{
+    color: darkseagreen;
+    cursor: pointer;
+}
