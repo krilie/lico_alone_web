@@ -1,15 +1,11 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import ReactDOM from 'react-dom';
-import {Provider} from "react-redux";
-import App from "./pages/home/App";
-import {HashRouter, Route} from 'react-router-dom'
-import store from "./redux/RuduxIndex";
+import './index.css';
+import App from './App';
 
-ReactDOM.render((
-    <Provider store={store}>
-        <HashRouter basename='/'>
-            <Route path={`/`} component={App}/>
-        </HashRouter>
-    </Provider>
-), document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
