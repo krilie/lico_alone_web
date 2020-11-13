@@ -29,10 +29,30 @@ class App extends React.Component {
     }
 
     render() {
+        const menuView = <nav className="level is-mobile">
+            <div className="level-left">
+                <p className="level-item">
+                    <strong>麦田听蝉</strong>
+                </p>
+                <p className="level-item">
+                    <a href="#/home">主页</a>
+                </p>
+                <p className="level-item">
+                    <a href="#/article">文档</a>
+                </p>
+            </div>
+            <div className="level-right">
+                <div className="level-item">
+                    <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
+                </div>
+            </div>
+        </nav>
+
+
         return (
             <div className="viewer">
                 <div className="container">
-                    <div>the menu</div>
+                    {menuView}
                     <div className="content-viewer">
                         <Switch>
                             <Route path={`/home`} component={HomePage}/>
@@ -40,7 +60,6 @@ class App extends React.Component {
                         </Switch>
                     </div>
                 </div>
-
                 <WebFooter/>
             </div>
         );
