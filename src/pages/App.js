@@ -4,8 +4,8 @@ import React from "react";
 import WebFooter from "../components/WebFooter";
 import HomePage from "./home/HomePage";
 import ArticlePage from "./article/ArticlePage";
-import {checkResDataWithToast, postVisited} from "../api/ApiCommon";
-import {GetCustomerTraceId} from "../tools/LocalStorageUtil";
+import {checkResDataWithToast, postVisited} from "../api/apiCommon";
+import {GetCustomerTraceId} from "../tools/localStorageUtil";
 import {Redirect, Route, Switch} from "react-router-dom";
 
 class App extends React.Component {
@@ -20,13 +20,14 @@ class App extends React.Component {
         return (
             <div className="viewer">
                 <div className="container">
-                    the menu
+                    <div>the menu</div>
+                    <Switch>
+                        <Route path={`/home`} component={HomePage}/>
+                        <Route path={`/article`} component={ArticlePage}/>
+                        <Redirect path={`/`} to={{pathname: `/home`}}/>
+                    </Switch>
                 </div>
-                <Switch>
-                    <Route path={`/home`} component={HomePage}/>
-                    <Route path={`/article`} component={ArticlePage}/>
-                    <Redirect path={`/`} to={{pathname: `/home`}}/>
-                </Switch>
+
                 <WebFooter/>
             </div>
         );
