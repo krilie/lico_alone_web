@@ -80,9 +80,7 @@ export default class Article extends React.Component {
         const loadMoreButton = <div className="load-more-button">
             <button className="button is-light" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
-        let articleListView = articleList.map((article, index) => (
-            ArticleSampleItem(article, index)
-        ))
+        let articleListView = articleList.map((article, index) => ArticleSampleItem(article, index))
         const searchButton = <div className="search-button">
             <input className="input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
@@ -107,7 +105,7 @@ export default class Article extends React.Component {
 // |-----| content
 // |-----| content
 function ArticleSampleItem(article, index) {
-    return <div className="article-item-view">
+    return <div key={index} className="article-item-view">
         <div className="columns">
             <div className="column index">
                 #{index}
