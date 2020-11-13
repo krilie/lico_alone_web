@@ -12,19 +12,29 @@
     font-size: 15px;
     color: #ecf5e1;
 }
-.menu-view a,strong{
-    font-weight: 900;
-    font-size: 20px;
-    color: coral;
-}
-
-.menu-view a:hover{
-    font-weight: 900;
-    font-size: 20px;
-    color: #ff0000;
-}
 
 .menu-view .menu-logo{
     color: darkseagreen;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+
+.menu-item-view{
+    font-weight: 9000;
+    font-size: 20px;
+    color: #f5dc9f;
+}
+
+.menu-item-view:hover{
+    font-weight: 900;
+    font-size: 20px;
+    color: #ffc100;
+}
+
+.selected{
+    font-weight: 900;
+    font-size: 20px;
+    color: #ffc100;
 }

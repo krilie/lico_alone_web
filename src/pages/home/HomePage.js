@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import ArticlePage from "../article/ArticlePage";
 
 class HomePage extends Component {
     render() {
         return (
             <div>
-                HomePage
+                <ArticlePage/>
             </div>
         );
     }

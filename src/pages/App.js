@@ -29,23 +29,27 @@ class App extends React.Component {
 
     }
 
+    buildMenu = (selected, menuPath, menuName) => {
+        const hrefName = `#${menuPath}`
+        return selected === menuPath ?
+            <a className="menu-item-view selected" href={hrefName}>{menuName}</a>
+            :
+            <a className="menu-item-view" href={hrefName}>{menuName}</a>
+            ;
+    }
+
     render() {
+        const pathname = this.props.location.pathname
+        const homeMenu = this.buildMenu(pathname, "/home", "主页")
+        const articleMenu = this.buildMenu(pathname, "/article", "文档")
         const menuView = <nav style={{margin: "5px"}} className="menu-view level is-mobile">
             <div className="level-left">
-                <p className="level-item">
-                    <a className="menu-logo" href="#/home">麦田听蝉</a>
-                </p>
-                <p className="level-item">
-                    <a href="#/home">主页</a>
-                </p>
-                <p className="level-item">
-                    <a href="#/article">文档</a>
-                </p>
+                <p className="level-item"><a className="menu-logo menu-item-view" href="/">麦田听蝉</a></p>
+                <p className="level-item">{homeMenu}</p>
+                <p className="level-item">{articleMenu}</p>
             </div>
             <div className="level-right">
-                <div className="level-item">
-                    <a rel="noreferrer" href="#/about">关于</a>
-                </div>
+                <div className="level-item"><a rel="noreferrer" href="#/about">关于</a></div>
                 <div className="level-item">
                     <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
                 </div>
