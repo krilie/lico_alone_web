@@ -18,7 +18,9 @@ class AboutPage extends Component {
     render() {
         const {aboutApp} = this.state
         return (
-            <div dangerouslySetInnerHTML={{__html: aboutApp}} className="about-app-view"/>
+            <div className="about-app-view">
+                <div dangerouslySetInnerHTML={{__html: aboutApp}}/>
+            </div>
         );
     }
 }
