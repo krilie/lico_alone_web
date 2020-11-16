@@ -16,16 +16,16 @@
     font-size: 15px;
     color: #ecf5e1;
 }
-.menu-view .navbar-item{
-    padding: 1px;
-    margin: 1px;
-}
-.menu-view .navbar-menu{
-    padding: 0 20px;
-    margin: 0;
-    min-width: 300px !important;
-    max-width: 1200px !important;
-}
+/*.menu-view .navbar-item{*/
+/*    padding: 1px;*/
+/*    margin: 1px;*/
+/*}*/
+/*.menu-view .navbar-menu{*/
+/*    padding: 0 20px;*/
+/*    margin: 0;*/
+/*    min-width: 300px !important;*/
+/*    max-width: 1200px !important;*/
+/*}*/
 
 .menu-view .menu-logo{
     color: darkseagreen;
