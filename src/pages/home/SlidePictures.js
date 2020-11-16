@@ -45,7 +45,14 @@ class SlidePictures extends React.Component {
             infinite: true,
             speed: 500,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            lazyLoad: true,
+            initialSlide: 2,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            cssEase: "linear",
+            pauseOnHover: true,
+            focusOnSelect: true,
         };
         const slideImages = data.map(val => {
             return  <li key={val.id} className="slide-image-item">
