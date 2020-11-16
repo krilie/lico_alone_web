@@ -42,16 +42,22 @@ class App extends React.Component {
         const pathname = this.props.location.pathname
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
-        const menuView = (<nav className="navbar menu-view is-mobile" role="navigation" aria-label="main navigation">
+        const menuView = (<nav className="navbar menu-view" role="navigation" aria-label="main navigation">
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-brand ">
                         <a className="navbar-item menu-item-view menu-logo" href="/">麦田听蝉</a>
+                        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                           data-target="navbarBasicExample">
+                            <span aria-hidden="true"/>
+                            <span aria-hidden="true"/>
+                            <span aria-hidden="true"/>
+                        </a>
                     </div>
-                    <div className="navbar-start is-mobile">
+                    <div className="navbar-start">
                         <p className="navbar-item">{homeMenu}</p>
                         <p className="navbar-item">{articleMenu}</p>
                     </div>
-                    <div className="navbar-end is-mobile">
+                    <div className="navbar-end">
                         <div className="navbar-item"><a rel="noreferrer" href="#/about">关于</a></div>
                         <div className="navbar-item">
                             <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
@@ -60,17 +66,19 @@ class App extends React.Component {
                 </div>
             </nav>
         )
+
+
         return (
             <div className="viewer">
-                    {menuView}
-                    <div className="content-viewer">
-                        <Switch>
-                            <Route path={`/home`} component={HomePage}/>
-                            <Route path={`/article`} component={ArticlePage}/>
-                            <Route path={`/about`} component={AboutPage}/>
-                        </Switch>
-                    </div>
-                    <WebFooter/>
+                {menuView}
+                <div className="content-viewer">
+                    <Switch>
+                        <Route path={`/home`} component={HomePage}/>
+                        <Route path={`/article`} component={ArticlePage}/>
+                        <Route path={`/about`} component={AboutPage}/>
+                    </Switch>
+                </div>
+                <WebFooter/>
             </div>
         );
     }
