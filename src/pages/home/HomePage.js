@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ArticlePage from "../article/ArticlePage";
 import AppVersion from "../../components/AppVersion";
+import SlidePictures from "./SlidePictures";
 
 class HomePage extends Component {
     render() {
@@ -12,6 +13,7 @@ class HomePage extends Component {
                     </div>
                     <div className="column">
                         <AppVersion/>
+                        <SlidePictures/>
                     </div>
                 </div>
             </div>

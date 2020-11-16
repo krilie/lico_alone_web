@@ -1,13 +1,9 @@
 import React from "react";
-import "./SlidePictures.less"
-import {GetCarouselPicData} from "../../api/ApiCommon";
-import CodeBlock from "../mark_down/CodeBlock";
-import ReactMarkdown from "react-markdown";
-import "github-markdown-css"
-import "highlight.js/styles/github.css"
-import "react-image-gallery/styles/css/image-gallery.css"
-import ImageGallery from 'react-image-gallery';
-import {replaceForImageProxy} from "../../utils/ImageProxy";
+import "./SlidePictures.css"
+import {checkResDataWithToast, GetCarouselPicData} from "../../api/apiCommon";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 class SlidePictures extends React.Component {
     constructor(props) {
@@ -32,61 +28,39 @@ class SlidePictures extends React.Component {
     }
 
     loadCarouselData = () => {
-        GetCarouselPicData(data => {
-            this.setState({
-                data: data
-            })
+        GetCarouselPicData().then(res=>{
+            const data = checkResDataWithToast(res);
+            if (data !== undefined){
+                this.setState({
+                    data: data
+                })
+            }
         })
     }
 
     render() {
         const {data, onFullScreen} = this.state
-
-        const images = data.map(val => ({
-            original: val.url,
-            fullscreen: val.url,
-            thumbnail: replaceForImageProxy(val.url,"400x"),
-            renderItem: () => onFullScreen ?
-                <div key={val.id} style={{height: "800px", width: "1000px"}}
-                     className="div-relative">
-                    <img src={replaceForImageProxy(val.url,"1000x")} alt={"img"}/>
-                    <div className="div-text-area">
-                        <ReactMarkdown
-                            className="markdown-content-carousel-view markdown-body"
-                            renderers={{code: CodeBlock,}}
-                            escapeHtml={false}
-                            skipHtml={false}
-                            source={val.message}
-                        />
-                    </div>
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+        const slideImages = data.map(val => {
+            return  <li key={val.id} className="slide-image-item">
+                <img className="slide-image-img" src={val.url} alt={"img"}/>
+                <div className="slide-image-message">
+                    {val.message}
                 </div>
-                :
-                <div key={val.id} style={{height: "250px", width: "500px"}}
-                     className="div-relative carousels">
-                    <img src={replaceForImageProxy(val.url,"500x")} alt={"img"}/>
-                    <div className="div-text-area">
-                        <ReactMarkdown
-                            className="markdown-content-carousel-view markdown-body"
-                            renderers={{code: CodeBlock,}}
-                            escapeHtml={false}
-                            skipHtml={false}
-                            source={val.message}
-                        />
-                    </div>
-                </div>,
-        }));
-        return (
-            <div className="image-gallery">
-                <ImageGallery
-                    autoPlay={true}
-                    showFullscreenButton={true}
-                    showPlayButton={onFullScreen}
-                    showThumbnails={onFullScreen}
-                    thumbnailPosition="bottom"
-                    onScreenChange={(isFull) => this.setState({onFullScreen: isFull})}
-                    items={images}/>
-            </div>
-        );
+            </li>
+        });
+
+        return <div className="slide-image-viewer">
+            <Slider {...settings}>
+                {slideImages}
+            </Slider>
+        </div>
     }
 }
 
