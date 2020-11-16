@@ -6,15 +6,14 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-
-
-
-
-
-
-
-                <ArticlePage/>
-                <AppVersion/>
+                <div className="columns">
+                    <div className="column is-two-thirds">
+                        <ArticlePage/>
+                    </div>
+                    <div className="column">
+                        <AppVersion/>
+                    </div>
+                </div>
             </div>
         );
     }

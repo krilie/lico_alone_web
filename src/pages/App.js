@@ -42,16 +42,16 @@ class App extends React.Component {
         const pathname = this.props.location.pathname
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
-        const menuView = (<nav className="navbar menu-view" role="navigation" aria-label="main navigation">
+        const menuView = (<nav className="navbar menu-view is-mobile" role="navigation" aria-label="main navigation">
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-brand ">
                         <a className="menu-logo menu-item-view" href="/">麦田听蝉</a>
                     </div>
-                    <div className="navbar-start">
+                    <div className="navbar-start is-mobile">
                         <p className="navbar-item">{homeMenu}</p>
                         <p className="navbar-item">{articleMenu}</p>
                     </div>
-                    <div className="navbar-end">
+                    <div className="navbar-end is-mobile">
                         <div className="navbar-item"><a rel="noreferrer" href="#/about">关于</a></div>
                         <div className="navbar-item">
                             <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
@@ -62,7 +62,6 @@ class App extends React.Component {
         )
         return (
             <div className="viewer">
-                <div className="container">
                     {menuView}
                     <div className="content-viewer">
                         <Switch>
@@ -72,7 +71,6 @@ class App extends React.Component {
                         </Switch>
                     </div>
                     <WebFooter/>
-                </div>
             </div>
         );
     }

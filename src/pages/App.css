@@ -1,9 +1,11 @@
 .viewer{
     margin: auto;
+    max-width: 1200px;
 }
 .content-viewer{
-    /*min-height: 400px;*/
+
 }
+
 .menu-view{
     text-align: center;
     padding: 0;
