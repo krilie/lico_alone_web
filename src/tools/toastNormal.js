@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 toast.configure({
-    autoClose: 2000,
+    autoClose: 1500,
     draggable: false,
     position: toast.POSITION.BOTTOM_CENTER
 })

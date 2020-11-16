@@ -45,7 +45,7 @@ class App extends React.Component {
         const menuView = (<nav className="navbar menu-view is-mobile" role="navigation" aria-label="main navigation">
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-brand ">
-                        <a className="menu-logo menu-item-view" href="/">麦田听蝉</a>
+                        <a className="navbar-item menu-item-view menu-logo" href="/">麦田听蝉</a>
                     </div>
                     <div className="navbar-start is-mobile">
                         <p className="navbar-item">{homeMenu}</p>

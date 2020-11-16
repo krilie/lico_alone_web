@@ -3,7 +3,9 @@
     max-width: 1200px;
 }
 .content-viewer{
-
+    max-width: 1150px;
+    text-align: center;
+    margin: auto;
 }
 
 .menu-view{
@@ -15,11 +17,11 @@
     color: #ecf5e1;
 }
 .menu-view .navbar-item{
-    padding: 2px;
-    margin: 2px;
+    padding: 1px;
+    margin: 1px;
 }
 .menu-view .navbar-menu{
-    padding: 5px 20px;
+    padding: 0 20px;
     margin: 0;
 }
 
@@ -28,8 +30,6 @@
     cursor: pointer;
     font-weight: 900;
     font-size: 20px;
-    padding: 5px;
-    margin: 5px;
 }
 
 .menu-item-view{
