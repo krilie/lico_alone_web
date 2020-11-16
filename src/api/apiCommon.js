@@ -9,7 +9,7 @@ export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址
 // with have filed [code.message.data]
 export const checkResData = (res) => res.data.code === 2000 ? res.data.data : undefined;
 export const getResData = (res) => checkResData(res) ? res.data.data : undefined;
-export const checkIsNotFound = (res)=> res.data.code === 4004;
+export const checkIsNotFound = (res) => res.data.code === 4004;
 export const checkResDataWithToast = (res) => {
     if (res.data.code !== 2000) {
         ToastWarn(res.data.message);
@@ -119,6 +119,7 @@ export const commonPostMultiForm = (url, params) => {
 export const getIcpInfo = () => commonGet("/api/common/icp_info");
 export const getVersion = () => commonGet("/api/common/version");
 export const postVisited = (traceId) => commonPostForm("/api/common/visited", {traceId: traceId});
+export const getAboutApp = () => commonGet("/api/common/about_app")
 // ===================================================================================================
 // 获取文章列表sample
 export function getArticleSampleList(pageNum, pageSize, searchKey) {
