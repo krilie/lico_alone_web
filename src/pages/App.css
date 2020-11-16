@@ -3,9 +3,8 @@
     max-width: 1200px;
 }
 .content-viewer{
-    max-width: 1150px;
     text-align: center;
-    margin: auto;
+    margin: 15px auto auto;
 }
 
 .menu-view{

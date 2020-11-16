@@ -15,7 +15,7 @@ class SlidePictures extends React.Component {
         // message: "顯示的"
         // url: "http://oss.lizo.top/static/1273910222259228672b7a47c273de0783708ea5eb52b42c35d.jpg"
         // is_on_show: true
-        this.state = {data: [], onFullScreen: false};
+        this.state = {data: []};
     }
 
     componentDidMount() {
@@ -39,7 +39,7 @@ class SlidePictures extends React.Component {
     }
 
     render() {
-        const {data, onFullScreen} = this.state
+        const {data} = this.state
         const settings = {
             dots: true,
             infinite: true,
