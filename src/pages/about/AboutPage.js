@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./AboutPage.css"
 import {checkResDataWithToast, getAboutApp} from "../../api/apiCommon";
 
 class AboutPage extends Component {
@@ -19,7 +20,7 @@ class AboutPage extends Component {
         const {aboutApp} = this.state
         return (
             <div className="about-app-view">
-                <div dangerouslySetInnerHTML={{__html: aboutApp}}/>
+                <div className="about-app-view-content" dangerouslySetInnerHTML={{__html: aboutApp}}/>
             </div>
         );
     }

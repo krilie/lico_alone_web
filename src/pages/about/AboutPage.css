@@ -1,4 +1,13 @@
 .about-app-view {
-    max-width: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.about-app-view-content{
+    width: inherit;
+    height: inherit;
     text-align: left;
 }
