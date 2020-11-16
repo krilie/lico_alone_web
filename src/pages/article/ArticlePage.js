@@ -2,7 +2,7 @@ import React from "react";
 import "./ArticlePage.css"
 import 'bulma/css/bulma.css'
 import {checkResDataWithToast, getArticleSampleList} from "../../api/apiCommon";
-import {ToastErr, ToastWarn} from "../../tools/toast";
+import {ToastErr, ToastWarn} from "../../tools/toastNormal";
 
 /**
  * -----------------------search key----

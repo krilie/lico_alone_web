@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from 'qs'
-import {ToastErr, ToastWarn} from "../tools/toast";
+import {ToastErr, ToastWarn} from "../tools/toastNormal";
 
 export const apiBaseUrl = 'https://lizo.top'
 export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址

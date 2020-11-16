@@ -18,7 +18,7 @@ export default class AppVersion extends React.Component {
     //   "version":"v2.2.3"
     //}
     componentDidMount() {
-        getVersion().then(res=>{
+        getVersion().then(res => {
             this.setState({
                 ...res.data
             })
@@ -26,10 +26,13 @@ export default class AppVersion extends React.Component {
     }
 
     componentWillUnmount = () => {
-        this.setState = (state,callback)=>{};
+        this.setState = (state, callback) => {
+        };
     }
 
-    copyText = (text) => CopyToBoard(text)
+    copyText = (text) => {
+        CopyToBoard(text)
+    }
 
     render() {
         const {build_time, git_commit, go_version, version} = this.state;

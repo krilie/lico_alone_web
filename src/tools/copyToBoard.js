@@ -1,4 +1,4 @@
-import {ToastNormal} from "./toast";
+import {ToastNormal} from "./toastNormal";
 
 export default function copyToBoard(text) {
     let transfer = document.createElement('input');
