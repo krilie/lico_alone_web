@@ -6,6 +6,13 @@ class HomePage extends Component {
     render() {
         return (
             <div>
+
+
+
+
+
+
+
                 <ArticlePage/>
                 <AppVersion/>
             </div>

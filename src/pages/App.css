@@ -6,11 +6,19 @@
 }
 .menu-view{
     text-align: center;
-    padding: 15px;
-    margin: 5px;
-    background-color: #f6f8f3;
+    padding: 0;
+    margin: 0;
+    background-color: #f7ffeb !important;
     font-size: 15px;
     color: #ecf5e1;
+}
+.menu-view .navbar-item{
+    padding: 2px;
+    margin: 2px;
+}
+.menu-view .navbar-menu{
+    padding: 5px 20px;
+    margin: 0;
 }
 
 .menu-view .menu-logo{
@@ -18,11 +26,14 @@
     cursor: pointer;
     font-weight: 900;
     font-size: 20px;
+    padding: 5px;
+    margin: 5px;
 }
 
-
 .menu-item-view{
-    font-weight: 9000;
+    text-align: center;
+    vertical-align: center;
+    font-weight: 900;
     font-size: 20px;
     color: #f5dc9f;
 }
