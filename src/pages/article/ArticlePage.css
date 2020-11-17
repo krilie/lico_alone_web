@@ -7,6 +7,7 @@
 
 .article-item-view:hover {
     background-color: #ecf5e1;
+    cursor: pointer;
 }
 
 .article-item-view:hover div {

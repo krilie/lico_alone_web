@@ -6,8 +6,9 @@ import HomePage from "./home/HomePage";
 import ArticlePage from "./article/ArticlePage";
 import {checkResDataWithToast, postVisited} from "../api/apiCommon";
 import {GetCustomerTraceId} from "../tools/localStorageUtil";
-import {Route, Switch} from "react-router-dom";
+import {withRouter,Route, Switch} from "react-router-dom";
 import AboutPage from "./about/AboutPage";
+import ArticleDetailPage from "./article/ArticleDetailPage";
 
 class App extends React.Component {
 
@@ -104,7 +105,8 @@ class App extends React.Component {
                 <div className="content-viewer">
                     <Switch>
                         <Route path={`/home`} component={HomePage}/>
-                        <Route path={`/article`} component={ArticlePage}/>
+                        <Route exact path={`/article`} component={ArticlePage}/>
+                        <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
@@ -114,4 +116,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default withRouter(App);

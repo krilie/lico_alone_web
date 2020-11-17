@@ -3,6 +3,7 @@ import "./ArticlePage.css"
 import 'bulma/css/bulma.css'
 import {checkResDataWithToast, getArticleSampleList} from "../../api/apiCommon";
 import {ToastErr, ToastWarn} from "../../tools/toastNormal";
+import {withRouter} from "react-router-dom";
 
 /**
  * -----------------------search key----
@@ -75,12 +76,32 @@ export default class Article extends React.Component {
             })
     }
 
+    // article sample list item
+// |-----| title
+// |-----| content
+// |-----| content
+    articleSampleItem = (article, index) => {
+        return <div key={index} onClick={() => this.props.history.push("/article/" + article.id)}
+                    className="article-item-view">
+            <div className="columns">
+                <div className="column index">
+                    #{index}
+                </div>
+                <div className="column">
+                    <div>{article.title}</div>
+                    <div>{article.description}</div>
+                </div>
+            </div>
+            <div style={{marginTop: "2px"}}/>
+        </div>
+    }
+
     render() {
         const {loading, articleList, moreButtonText} = this.state;
         const loadMoreButton = <div className="load-more-button">
             <button className="button is-light" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
-        let articleListView = articleList.map((article, index) => ArticleSampleItem(article, index))
+        let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
         const searchButton = <div className="search-button">
             <input className="input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
@@ -98,23 +119,4 @@ export default class Article extends React.Component {
         );
     }
 
-}
-
-// article sample list item
-// |-----| title
-// |-----| content
-// |-----| content
-function ArticleSampleItem(article, index) {
-    return <div key={index} className="article-item-view">
-        <div className="columns">
-            <div className="column index">
-                #{index}
-            </div>
-            <div className="column">
-                <div>{article.title}</div>
-                <div>{article.description}</div>
-            </div>
-        </div>
-        <div style={{marginTop: "2px"}}/>
-    </div>
 }

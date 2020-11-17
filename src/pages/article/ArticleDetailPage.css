@@ -1,0 +1,11 @@
+.article-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.article-view-content{
+    max-width: 1000px;
+    text-align: left;
+}
