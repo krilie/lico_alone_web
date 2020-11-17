@@ -4,6 +4,8 @@ import {ToastErr, ToastWarn} from "../tools/toastNormal";
 
 export const apiBaseUrl = 'https://api-app.lizo.top'
 export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址
+export const minioUrl = 'https://minio.lizo.top' // minio地址
+export const imageProxied = (path, ops) => imageProxy + "/" + ops + "/" + path.replace(minioUrl+"/","")
 
 // res.data is returned data from api
 // with have filed [code.message.data]

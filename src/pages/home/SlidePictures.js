@@ -1,6 +1,6 @@
 import React from "react";
 import "./SlidePictures.css"
-import {checkResDataWithToast, GetCarouselPicData} from "../../api/apiCommon";
+import {checkResDataWithToast, GetCarouselPicData, imageProxied} from "../../api/apiCommon";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -28,9 +28,9 @@ class SlidePictures extends React.Component {
     }
 
     loadCarouselData = () => {
-        GetCarouselPicData().then(res=>{
+        GetCarouselPicData().then(res => {
             const data = checkResDataWithToast(res);
-            if (data !== undefined){
+            if (data !== undefined) {
                 this.setState({
                     data: data
                 })
@@ -55,8 +55,8 @@ class SlidePictures extends React.Component {
             focusOnSelect: true,
         };
         const slideImages = data.map(val => {
-            return  <li key={val.id} className="slide-image-item">
-                <img className="slide-image-img" src={val.url} alt={"img"}/>
+            return <li key={val.id} className="slide-image-item">
+                <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
                 <div className="slide-image-message">
                     {val.message}
                 </div>
