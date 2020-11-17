@@ -88,8 +88,7 @@ class Article extends React.Component {
                     #{index}
                 </div>
                 <div className="column">
-                    <div>{article.title}</div>
-                    <div>{article.description}</div>
+                    <div><strong>{article.title}</strong><br/>{article.description}</div>
                 </div>
             </div>
             <div style={{marginTop: "2px"}}/>
