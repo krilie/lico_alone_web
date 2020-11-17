@@ -10,7 +10,7 @@ import {withRouter} from "react-router-dom";
  * -------------------------------------
  * ------------------------------------20
  */
-export default class Article extends React.Component {
+class Article extends React.Component {
 
     constructor(props) {
         super(props);
@@ -120,3 +120,5 @@ export default class Article extends React.Component {
     }
 
 }
+
+export default withRouter(Article)
