@@ -1,5 +1,4 @@
 .about-app-view {
-    width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +6,6 @@
 }
 
 .about-app-view-content{
-    width: inherit;
-    height: inherit;
+    max-width: 1000px;
     text-align: left;
 }
