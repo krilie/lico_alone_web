@@ -10,9 +10,14 @@ class ArticleDetailPage extends Component {
         super(props);
         this.state = {
             article: {},
-            loading: false,
+            loading: true,
             articleId: this.props.match.params.articleId
         }
+    }
+
+    componentWillUnmount() {
+        this.setState = (state, callback) => {
+        };
     }
 
     componentDidMount() {
@@ -36,12 +41,13 @@ class ArticleDetailPage extends Component {
     }
 
     render() {
-        const {article} = this.state
-        return (
+        const {article,loading} = this.state
+        return loading===false ?
             <div className="article-view">
                 <div className="article-view-content" dangerouslySetInnerHTML={{__html: article.content}}/>
             </div>
-        );
+            :
+            <div>loading</div>
     }
 }
 

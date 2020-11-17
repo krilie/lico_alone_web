@@ -81,7 +81,7 @@ class Article extends React.Component {
 // |-----| content
 // |-----| content
     articleSampleItem = (article, index) => {
-        return <div key={index} onClick={() => this.props.history.push("/article/" + article.id)}
+        return <div key={index} onClick={() => this.props.history.replace("/article/" + article.id)}
                     className="article-item-view">
             <div className="columns">
                 <div className="column index">
