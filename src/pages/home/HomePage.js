@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ArticlePage from "../article/ArticlePage";
 import AppVersion from "../../components/AppVersion";
 import SlidePictures from "./SlidePictures";
-import {withRouter} from "react-router-dom";
 
 class HomePage extends Component {
     render() {

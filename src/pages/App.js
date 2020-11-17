@@ -6,7 +6,7 @@ import HomePage from "./home/HomePage";
 import ArticlePage from "./article/ArticlePage";
 import {checkResDataWithToast, postVisited} from "../api/apiCommon";
 import {GetCustomerTraceId} from "../tools/localStorageUtil";
-import {withRouter,Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import AboutPage from "./about/AboutPage";
 import ArticleDetailPage from "./article/ArticleDetailPage";
 
