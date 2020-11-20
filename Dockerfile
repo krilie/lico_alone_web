@@ -1,6 +1,5 @@
-FROM node:lts as webBuilder
+FROM node:10-slim as webBuilder
 MAINTAINER livo
-
 ADD ./ /web
 WORKDIR /web
 RUN npm install  && npm run-script build
