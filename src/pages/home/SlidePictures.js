@@ -4,6 +4,8 @@ import {checkResDataWithToast, GetCarouselPicData, imageProxied} from "../../api
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import {Link} from "react-router-dom";
+import {stringToHex} from "../../tools/strUtil";
 
 class SlidePictures extends React.Component {
     constructor(props) {
@@ -55,12 +57,15 @@ class SlidePictures extends React.Component {
             focusOnSelect: true,
         };
         const slideImages = data.map(val => {
-            return <li key={val.id} className="slide-image-item">
-                <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
-                <div className="slide-image-message">
-                    {val.message}
-                </div>
-            </li>
+            const detailPage = `/picture_detail/${val.id}/${stringToHex(val.url)}/${stringToHex(val.message)}`
+            return ( <Link to={detailPage} target='_blank'>
+                <li key={val.id} className="slide-image-item">
+                    <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
+                    <div className="slide-image-message">
+                        {val.message}
+                    </div>
+                </li>
+            </Link>)
         });
 
         return <div className="slide-image-viewer">
