@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {hexToString} from "../tools/strUtil";
 import {imageProxied} from "../api/apiCommon";
+import './SlidePictureDetail.css'
 
 class SlidePictureDetail extends Component {
 
@@ -14,10 +15,12 @@ class SlidePictureDetail extends Component {
     }
 
     render() {
-        const {url, message, picId} = this.props
+        const {url, message, picId} = this.state
         return (
             <div className="pic-view">
-                <strong>{picId}</strong>
+                <div>
+                    <strong>id:{picId}</strong>
+                </div>
                 <img className="slide-image-img" src={imageProxied(url, "1000x800,fit")} alt={"img"}/>
                 <div className="slide-image-message">
                     {message}

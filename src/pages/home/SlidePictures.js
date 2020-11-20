@@ -58,14 +58,16 @@ class SlidePictures extends React.Component {
         };
         const slideImages = data.map(val => {
             const detailPage = `/picture_detail/${val.id}/${stringToHex(val.url)}/${stringToHex(val.message)}`
-            return ( <Link to={detailPage} target='_blank'>
-                <li key={val.id} className="slide-image-item">
-                    <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
-                    <div className="slide-image-message">
-                        {val.message}
-                    </div>
+            return (
+                <li className="slide-image-item">
+                    <Link key={val.id} to={detailPage} target="_blank">
+                        <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
+                        <div className="slide-image-message">
+                            {val.message}
+                        </div>
+                    </Link>
                 </li>
-            </Link>)
+            )
         });
 
         return <div className="slide-image-viewer">

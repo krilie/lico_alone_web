@@ -9,6 +9,7 @@ import {GetCustomerTraceId} from "../tools/localStorageUtil";
 import {Route, Switch} from "react-router-dom";
 import AboutPage from "./about/AboutPage";
 import ArticleDetailPage from "./article/ArticleDetailPage";
+import SlidePictureDetail from "./SlidePictureDetail";
 
 class App extends React.Component {
 
@@ -107,6 +108,8 @@ class App extends React.Component {
                         <Route path={`/home`} component={HomePage}/>
                         <Route exact path={`/article`} component={ArticlePage}/>
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
+                        <Route exact path={`/picture_detail/:picId/:hexPicUrl/:hexMessage`}
+                               component={SlidePictureDetail}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
