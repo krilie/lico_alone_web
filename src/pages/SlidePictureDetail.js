@@ -20,7 +20,7 @@ class SlidePictureDetail extends Component {
                 <strong>{picId}</strong>
                 <img className="slide-image-img" src={imageProxied(url, "1000x800,fit")} alt={"img"}/>
                 <div className="slide-image-message">
-                    {val.message}
+                    {message}
                 </div>
             </div>
         );
