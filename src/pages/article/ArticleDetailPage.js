@@ -44,7 +44,7 @@ class ArticleDetailPage extends Component {
         const {article,loading} = this.state
         return loading===false ?
             <div className="article-view">
-                <div className="article-view-content" dangerouslySetInnerHTML={{__html: article.content}}/>
+                <div className="article-view-content ck-content" dangerouslySetInnerHTML={{__html: article.content}}/>
             </div>
             :
             <div>loading</div>
