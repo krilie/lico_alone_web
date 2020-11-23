@@ -11,6 +11,69 @@
     text-align: left;
 }
 
+.article-view-content html body p ol ul li dl dt dd blockquote figure fieldset legend textarea pre iframe hr h1 h2 h3 h4 h5 h6{
+    margin: unset;
+    padding: unset;
+}
+.article-view-content h1 h2 h3 h4 h5 h6{
+    font-size: unset;
+    font-weight: unset;
+}
+.article-view-content ul{
+    list-style: unset;
+}
+.article-view-content button input select textarea{
+    margin: unset;
+}
+.article-view-content html{
+    box-sizing: unset;
+}
+
+
+.article-view-content *:before {
+    box-sizing: unset;
+}
+.article-view-content *:after {
+    box-sizing: unset;
+}
+
+.article-view-content img video{
+    height: unset;
+    max-width: unset;
+}
+
+.article-view-content iframe{
+    border: unset;
+}
+
+.article-view-content table{
+    border-collapse: unset;
+    border-spacing: unset;
+}
+
+.article-view-content td th{
+    padding: unset;
+    text-align: unset;
+}
+.article-view-content td:not([align]) th:not([align]){
+    text-align: unset;
+}
+
+.article-view-content * {
+    box-sizing: unset;
+    margin: unset;
+    padding: unset;
+    font-size: unset;
+    font-weight: unset;
+    list-style: unset;
+    height: unset;
+    max-width: unset;
+    border: unset;
+    border-collapse: unset;
+    border-spacing: unset;
+    text-align: unset;
+}
+
 /*
  * CKEditor 5 (v23.1.0) content styles.
  * Generated on Thu, 29 Oct 2020 12:17:48 GMT.

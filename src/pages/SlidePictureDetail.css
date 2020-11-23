@@ -1,4 +1,4 @@
-.pic-view{
+.pic-view {
 
 }
 
@@ -12,4 +12,8 @@
 
 .pic-view .slide-image-item {
     position: relative;
+}
+
+.pic-view .slide-image-img {
+    cursor: pointer;
 }

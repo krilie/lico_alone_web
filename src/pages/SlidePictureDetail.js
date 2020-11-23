@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {hexToString} from "../tools/strUtil";
 import {imageProxied} from "../api/apiCommon";
 import './SlidePictureDetail.css'
+import {withRouter} from "react-router-dom";
 
 class SlidePictureDetail extends Component {
 
@@ -17,7 +18,7 @@ class SlidePictureDetail extends Component {
     render() {
         const {url, message, picId} = this.state
         return (
-            <div className="pic-view">
+            <div title="点击返回" onClick={e=>this.props.history.goBack()} className="pic-view">
                 <div>
                     <strong>id:{picId}</strong>
                 </div>
@@ -30,4 +31,4 @@ class SlidePictureDetail extends Component {
     }
 }
 
-export default SlidePictureDetail;
+export default withRouter(SlidePictureDetail);
