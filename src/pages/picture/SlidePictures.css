@@ -30,4 +30,5 @@
 .slide-image-viewer .slick-list {
     max-height: 300px;
     max-width: 400px;
+    margin: auto;
 }
