@@ -9,7 +9,8 @@ import {GetCustomerTraceId} from "../tools/localStorageUtil";
 import {Route, Switch} from "react-router-dom";
 import AboutPage from "./about/AboutPage";
 import ArticleDetailPage from "./article/ArticleDetailPage";
-import SlidePictureDetail from "./SlidePictureDetail";
+import SlidePictureDetail from "./picture/SlidePictureDetail";
+import PictureHomePage from "./picture/PictureHomePage";
 
 class App extends React.Component {
 
@@ -73,6 +74,7 @@ class App extends React.Component {
         const pathname = this.props.location.pathname
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
+        const pictureMenu = this.buildMenu(pathname,"/picture","图片")
         const menuView = (<nav className="navbar menu-view" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand ">
                     <a className="navbar-item menu-item-view menu-logo" href="/">麦田听蝉</a>
@@ -89,6 +91,7 @@ class App extends React.Component {
                     <div className="navbar-start">
                         <div className="navbar-item">{homeMenu}</div>
                         <div className="navbar-item">{articleMenu}</div>
+                        <div className="navbar-item">{pictureMenu}</div>
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-item"><a rel="noreferrer" href="#/about">关于</a></div>
@@ -108,7 +111,8 @@ class App extends React.Component {
                         <Route path={`/home`} component={HomePage}/>
                         <Route exact path={`/article`} component={ArticlePage}/>
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
-                        <Route exact path={`/picture_detail/:picId/:hexPicUrl/:hexMessage`}
+                        <Route exact path={`/picture`} component={PictureHomePage}/>
+                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`}
                                component={SlidePictureDetail}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>

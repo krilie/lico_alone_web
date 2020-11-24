@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ArticlePage from "../article/ArticlePage";
 import AppVersion from "../../components/AppVersion";
-import SlidePictures from "./SlidePictures";
+import SlidePictures from "../picture/SlidePictures";
 
 class HomePage extends Component {
     render() {

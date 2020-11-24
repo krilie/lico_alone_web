@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {hexToString} from "../tools/strUtil";
-import {imageProxied} from "../api/apiCommon";
+import {hexToString} from "../../tools/strUtil";
+import {imageProxied} from "../../api/apiCommon";
 import './SlidePictureDetail.css'
 import {withRouter} from "react-router-dom";
 

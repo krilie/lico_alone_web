@@ -57,7 +57,7 @@ class SlidePictures extends React.Component {
             focusOnSelect: true,
         };
         const slideImages = data.map(val => {
-            const detailPage = `/picture_detail/${val.id}/${stringToHex(val.url)}/${stringToHex(val.message)}`
+            const detailPage = `/picture/${val.id}/${stringToHex(val.url)}/${stringToHex(val.message)}`
             return (
                 <li key={val.id} className="slide-image-item">
                     <Link  to={detailPage} target="_parent">
