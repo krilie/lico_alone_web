@@ -3,6 +3,7 @@ import "./ArticleDetailPage.css"
 
 import React, {Component} from 'react';
 import {checkResDataWithToast, getArticleById} from "../../api/apiCommon";
+import GoBackToolBar from "../../components/GoBackToolBar";
 
 class ArticleDetailPage extends Component {
 
@@ -41,13 +42,17 @@ class ArticleDetailPage extends Component {
     }
 
     render() {
-        const {article,loading} = this.state
-        return loading===false ?
+        const {article, loading} = this.state
+        const articleView = loading === false ?
             <div className="article-view">
                 <div className="article-view-content ck-content" dangerouslySetInnerHTML={{__html: article.content}}/>
             </div>
             :
             <div>loading</div>
+        return <div>
+            <GoBackToolBar history={this.props.history}/>
+            {articleView}
+        </div>
     }
 }
 
