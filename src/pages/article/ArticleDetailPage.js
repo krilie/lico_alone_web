@@ -48,7 +48,7 @@ class ArticleDetailPage extends Component {
                 <div className="article-view-content ck-content" dangerouslySetInnerHTML={{__html: article.content}}/>
             </div>
             :
-            <div>loading</div>
+            <div className="article-view-loading">loading...</div>
         return <div>
             <GoBackToolBar history={this.props.history}/>
             {articleView}

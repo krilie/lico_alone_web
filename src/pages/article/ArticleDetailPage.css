@@ -5,6 +5,12 @@
     margin: auto;
 }
 
+.article-view-loading{
+    font-size: 30px;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
 .article-view-content{
     max-width: 1200px;
     min-width: 800px;
