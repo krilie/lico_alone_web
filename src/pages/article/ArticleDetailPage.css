@@ -13,8 +13,8 @@
 
 .article-view-content{
     max-width: 1200px;
-    min-width: 800px;
     text-align: left;
+    padding: 20px;
 }
 
 /*
