@@ -1,10 +1,8 @@
-import "./ArticleDetailPage.css"
-
-
 import React, {Component} from 'react';
 import {checkResDataWithToast, getArticleById} from "../../api/apiCommon";
 import GoBackToolBar from "../../components/GoBackToolBar";
-
+import "./ArticleDetailPage.css"
+import "./ArticleDetailPageContentView.css"
 class ArticleDetailPage extends Component {
 
     constructor(props) {
@@ -45,7 +43,7 @@ class ArticleDetailPage extends Component {
         const {article, loading} = this.state
         const articleView = loading === false ?
             <div className="article-view">
-                <div className="article-view-content ck-content" dangerouslySetInnerHTML={{__html: article.content}}/>
+                <div id="articleView" className="article-view-content ck-content" dangerouslySetInnerHTML={{__html: article.content}}/>
             </div>
             :
             <div className="article-view-loading">loading...</div>
