@@ -31,7 +31,7 @@ export const checkIsSuccessWithToast = (res) => {
 // =====================================================================================================
 
 // 非api 外层返回结构可能不统一
-const apiCommon = axios.create({baseURL: apiBaseUrl,withCredentials:true})
+const apiCommon = axios.create({baseURL: apiBaseUrl,withCredentials:false})
 
 // 返回后拦截
 apiCommon.interceptors.response.use(
