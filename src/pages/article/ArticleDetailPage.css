@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    flex-direction: column;
+    text-align: left;
 }
 
 .article-view-loading{
@@ -14,7 +16,42 @@
 .article-view-content{
     max-width: 1200px;
     text-align: left;
-    padding: 20px;
+    padding: 40px;
+}
+
+.article-view-thumbs-view{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    min-width: 100px;
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.thumbs-has-view{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #87fac9;
+}
+
+.thumbs-no-has-view{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #ccf1f3;
+}
+
+.thumbs-has-view:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #53a785;
+}
+
+.thumbs-no-has-view:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #80bfc7;
 }
 
 /*
