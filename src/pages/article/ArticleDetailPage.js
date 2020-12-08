@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {checkResDataWithToast, getArticleById} from "../../api/apiCommon";
+import {
+    checkIsSuccessWithToast,
+    checkResDataWithToast,
+    disLikeArticleById,
+    getArticleById,
+    likeArticleById, removeDisLikeArticleById, removeLikeArticleById
+} from "../../api/apiCommon";
 import GoBackToolBar from "../../components/GoBackToolBar";
 import "./ArticleDetailPage.css"
 import "./ArticleDetailPageContentView.css"
@@ -22,6 +28,10 @@ class ArticleDetailPage extends Component {
     }
 
     componentDidMount() {
+        this.loadArticle()
+    }
+
+    loadArticle = () => {
         this.setState({
             loading: true
         })
@@ -41,27 +51,52 @@ class ArticleDetailPage extends Component {
         })
     }
 
+    like = (articleId) => {
+        this.setState({
+            loading: true
+        })
+        likeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
+    }
+    disLike = (articleId) => {
+        this.setState({
+            loading: true
+        })
+        disLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
+    }
+    removeLike = (articleId) => {
+        this.setState({
+            loading: true
+        })
+        removeLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
+    }
+    removeDisLike = (articleId) => {
+        this.setState({
+            loading: true
+        })
+        removeDisLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
+    }
+
     render() {
         const {article, loading} = this.state
         const thumbsUpView = article.has_like ?
-            <div className="thumbs-has-view">
+            <div onClick={e => this.removeLike(article.id)} className="thumbs-has-view">
                 <FiThumbsUp size={30}/>
                 <div style={{textAlign: "center"}}>{article.like}</div>
             </div>
             :
-            <div className="thumbs-no-has-view">
+            <div onClick={e => this.like(article.id)} className="thumbs-no-has-view">
                 <FiThumbsUp size={30}/>
                 <div style={{textAlign: "center"}}>{article.like}</div>
             </div>
         const thumbsDownView = article.has_dislike ?
-            <div className="thumbs-has-view">
+            <div onClick={e => this.removeDisLike(article.id)} className="thumbs-has-view">
                 <FiThumbsDown size={30}/>
-                <div style={{textAlign: "center"}}>{article.like}</div>
+                <div style={{textAlign: "center"}}>{article.dislike}</div>
             </div>
             :
-            <div className="thumbs-no-has-view">
+            <div onClick={e => this.disLike(article.id)} className="thumbs-no-has-view">
                 <FiThumbsDown size={30}/>
-                <div style={{textAlign: "center"}}>{article.like}</div>
+                <div style={{textAlign: "center"}}>{article.dislike}</div>
             </div>
 
         const articleView = loading === false ?

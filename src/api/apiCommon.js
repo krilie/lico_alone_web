@@ -5,7 +5,7 @@ import {ToastErr, ToastWarn} from "../tools/toastNormal";
 export const apiBaseUrl = 'https://api-app.lizo.top'
 export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址
 export const minioUrl = 'https://minio.lizo.top' // minio地址
-export const imageProxied = (path, ops) => imageProxy + "/" + ops + "/" + path.replace(minioUrl+"/","")
+export const imageProxied = (path, ops) => imageProxy + "/" + ops + "/" + path.replace(minioUrl + "/", "")
 
 // res.data is returned data from api
 // with have filed [code.message.data]
@@ -20,7 +20,14 @@ export const checkResDataWithToast = (res) => {
         return res.data.data;
     }
 }
-
+export const checkIsSuccessWithToast = (res) => {
+    if (res.data.code !== 2000) {
+        ToastWarn(res.data.message);
+        return false;
+    } else {
+        return true;
+    }
+}
 // =====================================================================================================
 
 // 非api 外层返回结构可能不统一
@@ -132,9 +139,11 @@ export function getArticleSampleList(pageNum, pageSize, searchKey) {
     });
 }
 
-export function getArticleById(articleId) {
-    return commonGet("/api/common/article/get_article", {article_id: articleId});
-}
+export const getArticleById = (articleId) => commonGet("/api/common/article/get_article", {article_id: articleId})
+export const disLikeArticleById = (articleId) => commonPostForm("/api/common/article/mark/dislike", {article_id: articleId})
+export const likeArticleById = (articleId) => commonPostForm("/api/common/article/mark/like", {article_id: articleId})
+export const removeDisLikeArticleById = (articleId) => commonPostForm("/api/common/article/mark/remove_dislike", {article_id: articleId})
+export const removeLikeArticleById = (articleId) => commonPostForm("/api/common/article/mark/remove_like", {article_id: articleId})
 
 // =============================================================
 export const GetCarouselPicData = () => commonGet("/api/common/carousel/query")
