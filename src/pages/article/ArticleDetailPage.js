@@ -18,7 +18,8 @@ class ArticleDetailPage extends Component {
         this.state = {
             article: {},
             loading: true,
-            articleId: this.props.match.params.articleId
+            articleId: this.props.match.params.articleId,
+            iFrameHeight:"0px"
         }
     }
 
@@ -101,8 +102,7 @@ class ArticleDetailPage extends Component {
 
         const articleView = loading === false ?
             <div className="article-view">
-                <div id="articleView" className="article-view-content ck-content"
-                     dangerouslySetInnerHTML={{__html: article.content}}/>
+                <iframe className="article-view-content" width="1000px" height="800px" scrolling="auto" srcDoc={article.content} title={article.title}/>
                 <div className="article-view-thumbs-view">
                     {thumbsUpView}
                     {thumbsDownView}

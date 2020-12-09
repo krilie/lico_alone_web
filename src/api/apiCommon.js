@@ -39,7 +39,6 @@ apiCommon.interceptors.response.use(
         return data
     },
     err => {
-        console.log(err.toString() + "," + err.response.toString())
         if (err.response !== undefined && err.response !== null) {
             if (err.response.status === 502 || err.response.status === 504) {
                 ToastErr("网关错误");
