@@ -61,7 +61,7 @@ class App extends React.Component {
     }
 
     buildMenu = (selected, menuPath, menuName) => {
-        const hrefName = `#${menuPath}`
+        const hrefName = `${menuPath}`
         return selected === menuPath ?
             <a className="menu-item-view selected" href={hrefName}>{menuName}</a>
             :
