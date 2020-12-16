@@ -94,7 +94,7 @@ class App extends React.Component {
                         <div className="navbar-item">{pictureMenu}</div>
                     </div>
                     <div className="navbar-end">
-                        <div className="navbar-item"><a rel="noreferrer" href="#/about">关于</a></div>
+                        <div className="navbar-item"><a rel="noreferrer" href="/about">关于</a></div>
                         <div className="navbar-item">
                             <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
                         </div>

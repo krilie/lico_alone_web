@@ -19,7 +19,6 @@ class ArticleDetailPage extends Component {
             article: {},
             loading: true,
             articleId: this.props.match.params.articleId,
-            iFrameHeight:"0px"
         }
     }
 

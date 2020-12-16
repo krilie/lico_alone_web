@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './pages/App';
-import {HashRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter basename='/'>
+        <BrowserRouter basename='/'>
             <Route path={`/`} component={App}/>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
