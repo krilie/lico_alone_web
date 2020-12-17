@@ -53,8 +53,6 @@ class App extends React.Component {
             console.log(this.props)
             if (this.state.pathname === "/")
                 this.props.history.push(`/home`);
-            else
-                this.props.history.push(`${this.state.pathname}`);
             postVisited(GetCustomerTraceId()).then(checkResDataWithToast)
         })
 
