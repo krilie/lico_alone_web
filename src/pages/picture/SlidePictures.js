@@ -1,11 +1,12 @@
 import React from "react";
 import "./SlidePictures.css"
-import {checkResDataWithToast, GetCarouselPicData, imageProxied} from "../../api/apiCommon";
+import {GetCarouselPicData} from "../../api/apiCommon";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import {Link} from "react-router-dom";
 import {stringToHex} from "../../tools/strUtil";
+import {checkResDataWithToast, imageProxied} from "../../api/apiBase";
 
 class SlidePictures extends React.Component {
     constructor(props) {

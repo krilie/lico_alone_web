@@ -1,6 +1,7 @@
 import React from "react";
 import "./Icplable.css"
-import {checkResDataWithToast, getIcpInfo} from "../api/apiCommon";
+import {getIcpInfo} from "../api/apiCommon";
+import {checkResDataWithToast} from "../api/apiBase";
 
 export default class IcpLabel extends React.Component {
 

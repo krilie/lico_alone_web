@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {hexToString} from "../../tools/strUtil";
-import {imageProxied} from "../../api/apiCommon";
 import './SlidePictureDetail.css'
 import {withRouter} from "react-router-dom";
 import GoBackToolBar from "../../components/GoBackToolBar";
+import {imageProxied} from "../../api/apiBase";
 
 class SlidePictureDetail extends Component {
 

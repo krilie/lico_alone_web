@@ -1,9 +1,10 @@
 import React from "react";
 import "./ArticlePage.css"
 import 'bulma/css/bulma.css'
-import {checkResDataWithToast, getArticleSampleList} from "../../api/apiCommon";
+import {getArticleSampleList} from "../../api/apiCommon";
 import {ToastErr, ToastWarn} from "../../tools/toastNormal";
 import {withRouter} from "react-router-dom";
+import {checkResDataWithToast} from "../../api/apiBase";
 
 /**
  * -----------------------search key----

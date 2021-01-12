@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {
-    checkIsSuccessWithToast,
-    checkResDataWithToast,
     disLikeArticleById,
     getArticleById,
     likeArticleById, removeDisLikeArticleById, removeLikeArticleById
@@ -10,6 +8,7 @@ import GoBackToolBar from "../../components/GoBackToolBar";
 import "./ArticleDetailPage.css"
 import "./ArticleDetailPageContentView.css"
 import {FiThumbsUp, FiThumbsDown} from "react-icons/fi";
+import {checkResDataWithToast} from "../../api/apiBase";
 
 class ArticleDetailPage extends Component {
 

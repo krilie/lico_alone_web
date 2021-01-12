@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import SlidePictures from "./SlidePictures";
 import "./PictureHomePage.css"
-import {checkResDataWithToast, GetCarouselPicData} from "../../api/apiCommon";
+import {GetCarouselPicData} from "../../api/apiCommon";
+import {checkResDataWithToast} from "../../api/apiBase";
 
 class PictureHomePage extends Component {
 

@@ -4,13 +4,14 @@ import React from "react";
 import WebFooter from "../components/WebFooter";
 import HomePage from "./home/HomePage";
 import ArticlePage from "./article/ArticlePage";
-import {checkResDataWithToast, postVisited} from "../api/apiCommon";
+import {postVisited} from "../api/apiCommon";
 import {GetCustomerTraceId} from "../tools/localStorageUtil";
 import {Route, Switch} from "react-router-dom";
 import AboutPage from "./about/AboutPage";
 import ArticleDetailPage from "./article/ArticleDetailPage";
 import SlidePictureDetail from "./picture/SlidePictureDetail";
 import PictureHomePage from "./picture/PictureHomePage";
+import {checkResDataWithToast} from "../api/apiBase";
 
 class App extends React.Component {
 

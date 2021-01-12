@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {checkResDataWithToast, getAboutApp} from "../../api/apiCommon";
+import {getAboutApp} from "../../api/apiCommon";
 import "./AboutPage.css"
 import "./AboutPageView.css"
+import {checkResDataWithToast} from "../../api/apiBase";
 
 class AboutPage extends Component {
 
