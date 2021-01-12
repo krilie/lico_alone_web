@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import SlidePictures from "./SlidePictures";
 import "./PictureHomePage.css"
 import {GetCarouselPicData} from "../../api/apiCommon";
-import {checkResDataWithToast} from "../../api/apiBase";
+import {checkResDataWithToast, imageProxied} from "../../api/apiBase";
 
 class PictureHomePage extends Component {
 
@@ -25,17 +24,17 @@ class PictureHomePage extends Component {
         GetCarouselPicData().then(res => {
             const data = checkResDataWithToast(res);
             if (data !== undefined) {
-                this.setState({
-                    data: data
-                })
+                this.setState({data: data})
             }
         })
     }
 
     render() {
+        const {data} = this.state;
+        const picViews = data.map(p => <div className="pic-item"><img src={imageProxied(p.url, "800x600,fit")} alt={"img"}/></div>);
         return (
             <div className="pic-home">
-                <SlidePictures/>
+                {picViews}
             </div>
         );
     }
