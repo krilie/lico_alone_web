@@ -6,9 +6,8 @@ import {
 } from "../../api/apiCommon";
 import GoBackToolBar from "../../components/GoBackToolBar";
 import "./ArticleDetailPage.css"
-import "./ArticleDetailPageContentView.css"
 import {FiThumbsUp, FiThumbsDown} from "react-icons/fi";
-import {checkResDataWithToast} from "../../api/apiBase";
+import {checkIsSuccessWithToast, checkResDataWithToast} from "../../api/apiBase";
 
 class ArticleDetailPage extends Component {
 
@@ -31,9 +30,7 @@ class ArticleDetailPage extends Component {
     }
 
     loadArticle = () => {
-        this.setState({
-            loading: true
-        })
+        this.setState({loading: true})
         const {articleId} = this.state
         getArticleById(articleId).then(res => {
             const data = checkResDataWithToast(res);
@@ -44,34 +41,24 @@ class ArticleDetailPage extends Component {
                 })
             }
         }).finally(() => {
-            this.setState({
-                loading: false
-            })
+            this.setState({loading: false})
         })
     }
 
     like = (articleId) => {
-        this.setState({
-            loading: true
-        })
+        this.setState({loading: true})
         likeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
     disLike = (articleId) => {
-        this.setState({
-            loading: true
-        })
+        this.setState({loading: true})
         disLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
     removeLike = (articleId) => {
-        this.setState({
-            loading: true
-        })
+        this.setState({loading: true})
         removeLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
     removeDisLike = (articleId) => {
-        this.setState({
-            loading: true
-        })
+        this.setState({loading: true})
         removeDisLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
 
@@ -100,7 +87,8 @@ class ArticleDetailPage extends Component {
 
         const articleView = loading === false ?
             <div className="article-view">
-                <iframe className="article-view-content" width="1000px" height="800px" scrolling="auto" srcDoc={article.content} title={article.title}/>
+                <iframe className="article-view-content" scrolling="auto"
+                        srcDoc={article.content} title={article.title}/>
                 <div className="article-view-thumbs-view">
                     {thumbsUpView}
                     {thumbsDownView}
