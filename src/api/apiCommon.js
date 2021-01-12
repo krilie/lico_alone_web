@@ -2,7 +2,8 @@ import axios from "axios";
 import qs from 'qs'
 import {ToastErr, ToastWarn} from "../tools/toastNormal";
 
-export const apiBaseUrl = 'https://api-app.lizo.top'
+// export const apiBaseUrl = 'https://api-app.lizo.top'
+export const apiBaseUrl = ''
 export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址
 export const minioUrl = 'https://minio.lizo.top' // minio地址
 export const imageProxied = (path, ops) => imageProxy + "/" + ops + "/" + path.replace(minioUrl + "/", "")
