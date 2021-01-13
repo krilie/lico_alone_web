@@ -1,5 +1,4 @@
 import './App.css';
-import 'bulma/css/bulma.css'
 import React from "react";
 import WebFooter from "../components/WebFooter";
 import HomePage from "./home/HomePage";
@@ -34,7 +33,7 @@ class App extends React.Component {
     buildMenu = (selected, menuPath, menuName) => {
         const hrefName = `${menuPath}`
         if (selected === menuPath) {
-            return <a style={{color:"#fc8a8a"}} className="menu-item" href={hrefName}>{menuName}</a>
+            return <a style={{color: "#fc8a8a"}} className="menu-item" href={hrefName}>{menuName}</a>
         } else {
             return <a className="menu-item" href={hrefName}>{menuName}</a>
         }
@@ -45,7 +44,7 @@ class App extends React.Component {
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
         const pictureMenu = this.buildMenu(pathname, "/picture", "图片")
-        const aboutMenu = this.buildMenu(pathname,"/about","关于")
+        const aboutMenu = this.buildMenu(pathname, "/about", "关于")
         return (
             <div className="app">
                 <div className="menu">
@@ -53,7 +52,7 @@ class App extends React.Component {
                     {homeMenu}
                     {articleMenu}
                     {pictureMenu}
-                    <div style={{flexGrow: 1}} />
+                    <div style={{flexGrow: 1}}/>
                     {aboutMenu}
                     <a className="menu-item" target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
                 </div>
@@ -63,8 +62,7 @@ class App extends React.Component {
                         <Route exact path={`/article`} component={ArticlePage}/>
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
                         <Route exact path={`/picture`} component={PictureHomePage}/>
-                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`}
-                               component={SlidePictureDetail}/>
+                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`} component={SlidePictureDetail}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>

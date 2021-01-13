@@ -1,0 +1,18 @@
+.home-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.home-page .article {
+    flex-grow: 1;
+}
+.home-page .slider {
+    flex-grow: 1;
+}
+.home-page .slider .version{
+    background-color: transparent;
+}
+.home-page .slider .pic {
+
+}
