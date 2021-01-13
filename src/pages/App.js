@@ -17,41 +17,13 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props)
         this.state = {
-            pathname: `${this.props.location.pathname}`,
-            menuDrownClass: {
-                isActive: false,
-                menu: "navbar-menu", // is-active
-                burger: "navbar-burger burger",
-            }
-        }
-    }
-
-    onClickMenuBurger = () => {
-        const {menuDrownClass} = this.state
-        if (menuDrownClass.isActive === true) {
-            this.setState({
-                menuDrownClass: {
-                    isActive: false,
-                    menu: "navbar-menu", // is-active
-                    burger: "navbar-burger burger",
-                }
-            })
-        } else {
-            this.setState({
-                menuDrownClass: {
-                    isActive: true,
-                    menu: "navbar-menu is-active", // is-active
-                    burger: "navbar-burger burger is-active",
-                }
-            })
+            pathname: `${this.props.location.pathname}`
         }
     }
 
     componentDidMount() {
         process.nextTick(() => {
-            console.log(this.props)
             if (this.state.pathname === "/")
                 this.props.history.push(`/home`);
             postVisited(GetCustomerTraceId()).then(checkResDataWithToast)
@@ -77,15 +49,7 @@ class App extends React.Component {
         const menuView = (<nav className="navbar menu-view" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand ">
                     <a className="navbar-item menu-item-view menu-logo" href="/">麦田听蝉</a>
-                    <div onClick={e => this.onClickMenuBurger()} role="button" className={menuDrownClass.burger}
-                         aria-label="menu" aria-expanded="false"
-                         data-target="my-navbar-menu">
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
-                    </div>
                 </div>
-
                 <div id="my-navbar-menu" className={menuDrownClass.menu}>
                     <div className="navbar-start">
                         <div className="navbar-item">{homeMenu}</div>
@@ -103,9 +67,11 @@ class App extends React.Component {
         )
 
         return (
-            <div className="viewer">
-                {menuView}
-                <div className="content-viewer">
+            <div className="app">
+                <div className="menu">
+                    {menuView}
+                </div>
+                <div className="content">
                     <Switch>
                         <Route path={`/home`} component={HomePage}/>
                         <Route exact path={`/article`} component={ArticlePage}/>
@@ -116,7 +82,9 @@ class App extends React.Component {
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
-                <WebFooter/>
+                <div className="footer">
+                    <WebFooter/>
+                </div>
             </div>
         );
     }
