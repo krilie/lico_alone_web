@@ -1,16 +1,10 @@
 import React from "react";
 import "./ArticlePage.css"
-import 'bulma/css/bulma.css'
 import {getArticleSampleList} from "../../api/apiCommon";
 import {ToastErr, ToastWarn} from "../../tools/toastNormal";
 import {withRouter} from "react-router-dom";
 import {checkResDataWithToast} from "../../api/apiBase";
 
-/**
- * -----------------------search key----
- * -------------------------------------
- * ------------------------------------20
- */
 class Article extends React.Component {
 
     constructor(props) {
@@ -77,23 +71,20 @@ class Article extends React.Component {
             })
     }
 
-    // article sample list item
-// |-----| title
-// |-----| content
-// |-----| content
     articleSampleItem = (article, index) => {
-        return <div key={index} onClick={() => this.props.history.push("/article/" + article.id)}
-                    className="article-item-view">
-            <div className="columns">
-                <div className="column index">
+        return (
+        <div key={index} onClick={() => this.props.history.push("/article/" + article.id)} className="article-item">
+            <div >
+                <div >
                     #{index}
                 </div>
-                <div className="column">
+                <div >
                     <div><strong>{article.title}</strong><br/>{article.description}</div>
                 </div>
             </div>
             <div style={{marginTop: "2px"}}/>
         </div>
+        )
     }
 
     render() {
@@ -102,7 +93,7 @@ class Article extends React.Component {
             <button className="button is-light" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
         let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
-        const searchButton = <div className="search-button">
+        const searchButton = <div >
             <input className="input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
                    onKeyUp={e => e.keyCode === 13 ? this.loadData(true) : null} // enter key
@@ -111,7 +102,7 @@ class Article extends React.Component {
         </div>
         const articleListViewOnShow = loading === true ? <div>loading</div> : articleListView;
         return (
-            <div className="article-page-view">
+            <div className="article-view">
                 {searchButton}
                 {articleListViewOnShow}
                 {loadMoreButton}
