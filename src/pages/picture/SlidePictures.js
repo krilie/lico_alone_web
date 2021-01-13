@@ -51,7 +51,7 @@ class SlidePictures extends React.Component {
             slidesToScroll: 1,
             lazyLoad: true,
             initialSlide: 2,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             cssEase: "linear",
             pauseOnHover: true,

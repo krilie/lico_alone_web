@@ -1,5 +1,8 @@
 .slide-image-viewer {
-
+    max-height: 300px;
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
 }
 
 .slide-image-viewer .slide-image-item {
@@ -25,7 +28,7 @@
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 .slide-image-viewer .slick-list {
