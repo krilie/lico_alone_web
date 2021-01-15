@@ -1,5 +1,4 @@
 import './App.css';
-import 'bulma/css/bulma.css'
 import React from "react";
 import WebFooter from "../components/WebFooter";
 import HomePage from "./home/HomePage";
@@ -17,41 +16,13 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props)
         this.state = {
-            pathname: `${this.props.location.pathname}`,
-            menuDrownClass: {
-                isActive: false,
-                menu: "navbar-menu", // is-active
-                burger: "navbar-burger burger",
-            }
-        }
-    }
-
-    onClickMenuBurger = () => {
-        const {menuDrownClass} = this.state
-        if (menuDrownClass.isActive === true) {
-            this.setState({
-                menuDrownClass: {
-                    isActive: false,
-                    menu: "navbar-menu", // is-active
-                    burger: "navbar-burger burger",
-                }
-            })
-        } else {
-            this.setState({
-                menuDrownClass: {
-                    isActive: true,
-                    menu: "navbar-menu is-active", // is-active
-                    burger: "navbar-burger burger is-active",
-                }
-            })
+            pathname: `${this.props.location.pathname}`
         }
     }
 
     componentDidMount() {
         process.nextTick(() => {
-            console.log(this.props)
             if (this.state.pathname === "/")
                 this.props.history.push(`/home`);
             postVisited(GetCustomerTraceId()).then(checkResDataWithToast)
@@ -61,62 +32,43 @@ class App extends React.Component {
 
     buildMenu = (selected, menuPath, menuName) => {
         const hrefName = `${menuPath}`
-        return selected === menuPath ?
-            <a className="menu-item-view selected" href={hrefName}>{menuName}</a>
-            :
-            <a className="menu-item-view" href={hrefName}>{menuName}</a>
-            ;
+        if (selected === menuPath) {
+            return <a style={{color: "#fc8a8a"}} className="menu-item" href={hrefName}>{menuName}</a>
+        } else {
+            return <a className="menu-item" href={hrefName}>{menuName}</a>
+        }
     }
 
     render() {
-        const {menuDrownClass} = this.state
         const pathname = this.props.location.pathname
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
-        const pictureMenu = this.buildMenu(pathname,"/picture","图片")
-        const menuView = (<nav className="navbar menu-view" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand ">
-                    <a className="navbar-item menu-item-view menu-logo" href="/">麦田听蝉</a>
-                    <div onClick={e => this.onClickMenuBurger()} role="button" className={menuDrownClass.burger}
-                         aria-label="menu" aria-expanded="false"
-                         data-target="my-navbar-menu">
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
-                        <span aria-hidden="true"/>
-                    </div>
-                </div>
-
-                <div id="my-navbar-menu" className={menuDrownClass.menu}>
-                    <div className="navbar-start">
-                        <div className="navbar-item">{homeMenu}</div>
-                        <div className="navbar-item">{articleMenu}</div>
-                        <div className="navbar-item">{pictureMenu}</div>
-                    </div>
-                    <div className="navbar-end">
-                        <div className="navbar-item"><a rel="noreferrer" href="/about">关于</a></div>
-                        <div className="navbar-item">
-                            <a target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        )
-
+        const pictureMenu = this.buildMenu(pathname, "/picture", "图片")
+        const aboutMenu = this.buildMenu(pathname, "/about", "关于")
         return (
-            <div className="viewer">
-                {menuView}
-                <div className="content-viewer">
+            <div className="app">
+                <div className="menu">
+                    <a style={{}} className="menu-item" href="/">麦田听蝉</a>
+                    {homeMenu}
+                    {articleMenu}
+                    {pictureMenu}
+                    <div style={{flexGrow: 2}}/>
+                    {aboutMenu}
+                    <a className="menu-item" target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
+                </div>
+                <div className="content">
                     <Switch>
                         <Route path={`/home`} component={HomePage}/>
                         <Route exact path={`/article`} component={ArticlePage}/>
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
                         <Route exact path={`/picture`} component={PictureHomePage}/>
-                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`}
-                               component={SlidePictureDetail}/>
+                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`} component={SlidePictureDetail}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
-                <WebFooter/>
+                <div className="footer">
+                    <WebFooter/>
+                </div>
             </div>
         );
     }

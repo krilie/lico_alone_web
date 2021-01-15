@@ -1,17 +1,20 @@
 .appVersion {
-  margin: 0;
-  max-width: 100%;
-  min-width: 1%;
-  background-color: #fff;
-  padding: 3px;
-  text-align: left;
+  background-color: transparent;
+  margin: 10px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  color: lightcoral;
 }
 
 .appVersion div{
   font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .pointer-able{

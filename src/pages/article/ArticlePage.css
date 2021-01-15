@@ -1,57 +1,42 @@
-.article-page-view {
-    max-width: 800px;
-    text-align: center;
+.article-view {
+    margin: 0;
     padding: 0;
-    margin: auto;
+    min-width: 500px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center; /*都排列在上边*/
+    align-items: center; /*每个成员排列*/
+    align-content: flex-start; /*整体排列*/
+    gap: 5px;
 }
 
-.article-item-view:hover {
-    background-color: #ecf5e1;
+.article-view .article-item {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    gap: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    background-color: #f6e8e8;
+    color: #ee945b;
+}
+
+.article-view .article-item:hover {
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    gap: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    background-color: #f6e8e8;
 }
 
-.article-item-view:hover div {
-    color: black;
-}
-
-.article-item-view {
-    background-color: #f1f5ec;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-}
-.article-item-view .index{
-    max-width: 25px;
-    vertical-align: center;
-    background-color: bisque;
-    margin: 3px;
-    padding: 3px;
-}
-.article-item-view .column{
-    margin: 0;
-    padding: 0;
-}
-.article-item-view .columns{
-    margin: 0;
-    padding: 0;
-}
-
-.load-more-button{
-    text-align: center;
-    padding: 10px;
-}
-.load-more-button .button{
-    margin: 0;
-    padding: 10px;
-}
-
-.search-button{
-    text-align: right;
-    padding-top: 0;
-}
-.search-button .input{
-    margin: 0;
-    width: 250px;
-    height: 30px;
-    padding: 0 10px;
+.article-view .article-search-input {
+    color: #ee945b;
+    height: 25px;
+    font-size: 25px;
+    border-style: none;
 }

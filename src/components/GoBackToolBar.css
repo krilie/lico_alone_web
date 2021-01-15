@@ -1,15 +1,5 @@
 .go-back-toolbar {
-    background-color: #ffffff;
     text-align: left;
-    padding-left: 10px;
-    padding-bottom: 5px;
-}
-
-.go-back-toolbar .go-back-button{
-    font-weight: 900;
-    color: darkseagreen;
-}
-
-.go-back-toolbar .go-back-button:hover{
-    color: green;
+    padding: 10px;
+    margin: 0;
 }

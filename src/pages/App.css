@@ -1,55 +1,73 @@
-.viewer{
-    margin: auto;
-    max-width: 1200px;
-}
-.content-viewer{
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 30px;
+.app {
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: flex-start; /*都挤在前边*/
+    align-content: flex-start;  /*多主轴有效 多主轴对齐*/
+
+    background-color: transparent;
+    min-width: 550px;
 }
 
-.menu-view{
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    background-color: #f7ffeb !important;
-    font-size: 15px;
-    color: #ecf5e1;
-}
-/*.menu-view .navbar-item{*/
-/*    padding: 1px;*/
-/*    margin: 1px;*/
-/*}*/
-/*.menu-view .navbar-menu{*/
-/*    padding: 0 20px;*/
-/*    margin: 0;*/
-/*    min-width: 300px !important;*/
-/*    max-width: 1200px !important;*/
-/*}*/
+.app .menu {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 50px;
 
-.menu-view .menu-logo{
-    color: darkseagreen;
-    cursor: pointer;
-    font-weight: 900;
-    font-size: 20px;
+    background-color: #cae2e2;
+
+    justify-content: center; /*元素居中*/
+    align-items: center;     /*交叉轴对齐居中*/
+
+    justify-items: center;   /*和子项目在个自的空间上的对齐多式*/
 }
 
-.menu-item-view{
-    text-align: center;
-    vertical-align: center;
-    font-weight: 900;
-    font-size: 20px;
-    color: #f5dc9f;
+.app .menu .menu-item {
+    flex-grow: 0; /*不占用自身外空间*/
+    flex-shrink: 0; /*不压缩自身空间*/
+    /*flex-basis: 200px;*/ /*自身占用空间*/
+
+    padding: 5px;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 仿宋, serif;
+    color: #c89932;
+    /*内容居中*/
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
 }
 
-.menu-item-view:hover{
-    font-weight: 900;
-    font-size: 20px;
-    color: #ffc100;
+.app .menu .menu-item:hover {
+    flex-grow: 0;
+    flex-shrink: 0;
+    /*flex-basis: 200px;*/
+
+    padding: 5px;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 仿宋, serif;
+    color: #957947;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
 }
 
-.selected{
-    font-weight: 900;
-    font-size: 20px;
-    color: #ffc100;
+
+.app .content {
+    min-width: 550px;
+    max-width: inherit;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .footer {
+    min-width: 550px;
 }

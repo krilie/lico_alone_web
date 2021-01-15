@@ -1,16 +1,10 @@
 import React from "react";
 import "./ArticlePage.css"
-import 'bulma/css/bulma.css'
 import {getArticleSampleList} from "../../api/apiCommon";
 import {ToastErr, ToastWarn} from "../../tools/toastNormal";
 import {withRouter} from "react-router-dom";
 import {checkResDataWithToast} from "../../api/apiBase";
 
-/**
- * -----------------------search key----
- * -------------------------------------
- * ------------------------------------20
- */
 class Article extends React.Component {
 
     constructor(props) {
@@ -77,41 +71,30 @@ class Article extends React.Component {
             })
     }
 
-    // article sample list item
-// |-----| title
-// |-----| content
-// |-----| content
     articleSampleItem = (article, index) => {
-        return <div key={index} onClick={() => this.props.history.push("/article/" + article.id)}
-                    className="article-item-view">
-            <div className="columns">
-                <div className="column index">
-                    #{index}
-                </div>
-                <div className="column">
-                    <div><strong>{article.title}</strong><br/>{article.description}</div>
-                </div>
+        return (
+            <div className="article-item" key={index} onClick={() => this.props.history.push("/article/" + article.id)}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>{index}.</div>
+                <div><strong>{article.title}</strong><br/>{article.description}</div>
             </div>
-            <div style={{marginTop: "2px"}}/>
-        </div>
+        )
     }
 
     render() {
         const {loading, articleList, moreButtonText} = this.state;
-        const loadMoreButton = <div className="load-more-button">
-            <button className="button is-light" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
+        const loadMoreButton = <div>
+            <button className="btn btn--load-more" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
         let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
-        const searchButton = <div className="search-button">
-            <input className="input" type="text" name="search_key"
+        const searchButton = <div style={{textAlign:"right",flexGrow:1,width:"500px"}}>
+            <input className="article-search-input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
                    onKeyUp={e => e.keyCode === 13 ? this.loadData(true) : null} // enter key
                    placeholder="输入关键字并按回车进行搜索"/>
-            <div style={{marginTop: "10px"}}/>
         </div>
         const articleListViewOnShow = loading === true ? <div>loading</div> : articleListView;
         return (
-            <div className="article-page-view">
+            <div className="article-view">
                 {searchButton}
                 {articleListViewOnShow}
                 {loadMoreButton}

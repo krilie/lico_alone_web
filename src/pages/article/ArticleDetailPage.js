@@ -86,9 +86,8 @@ class ArticleDetailPage extends Component {
             </div>
 
         const articleView = loading === false ?
-            <div className="article-view">
-                <iframe className="article-view-content" scrolling="auto"
-                        srcDoc={article.content} title={article.title}/>
+            <div className="article-detail-view">
+                <div dangerouslySetInnerHTML={{__html:article.content}}/>
                 <div className="article-view-thumbs-view">
                     {thumbsUpView}
                     {thumbsDownView}
