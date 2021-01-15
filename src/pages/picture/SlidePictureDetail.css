@@ -1,5 +1,9 @@
 .pic-view {
-
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .pic-view .slide-image-message {
