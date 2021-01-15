@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
 
-    justify-content: flex-start; /*都排列在上边*/
-    align-items: flex-start; /*每个成员排列*/
+    justify-content: center; /*都排列在上边*/
+    align-items: center; /*每个成员排列*/
     align-content: flex-start; /*整体排列*/
     gap: 5px;
 }
