@@ -89,8 +89,8 @@ class Article extends React.Component {
 
     render() {
         const {loading, articleList, moreButtonText} = this.state;
-        const loadMoreButton = <div className="load-more-button">
-            <button className="button is-light" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
+        const loadMoreButton = <div>
+            <button disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
         let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
         const searchButton = <div >
@@ -98,7 +98,6 @@ class Article extends React.Component {
                    onChange={event => this.updateSearchKey(event.target.value)}
                    onKeyUp={e => e.keyCode === 13 ? this.loadData(true) : null} // enter key
                    placeholder="输入关键字并按回车进行搜索"/>
-            <div style={{marginTop: "10px"}}/>
         </div>
         const articleListViewOnShow = loading === true ? <div>loading</div> : articleListView;
         return (

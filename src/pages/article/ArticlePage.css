@@ -1,16 +1,19 @@
 .article-view {
+    margin: 0;
+    padding: 0;
+    min-width: 500px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+
+    justify-content: flex-start; /*都排列在上边*/
+    align-items: flex-start; /*每个成员排列*/
+    align-content: flex-start; /*整体排列*/
 }
 
 .article-view .article-item {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
+    align-content: flex-start;
+    min-width: 500px;
+    max-width: 500px;
 }
