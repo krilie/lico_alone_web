@@ -12,6 +12,7 @@
 .app .menu {
     display: flex;
     flex-flow: row nowrap;
+    height: 50px;
 
     background-color: #cae2e2;
 
