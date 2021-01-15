@@ -1,7 +1,7 @@
 .article-detail-view{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: auto;
     flex-direction: column;
     text-align: left;
