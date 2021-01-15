@@ -36,6 +36,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    text-decoration: none;
 }
 
 .app .menu .menu-item:hover {
@@ -53,13 +54,14 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    text-decoration: none;
 }
 
 
 .app .content {
-
+    min-width: 550px;
 }
 
 .app .footer {
-
+    min-width: 550px;
 }

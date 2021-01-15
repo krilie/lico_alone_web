@@ -1,6 +1,5 @@
 import React from "react";
 import "./AppVersion.css"
-import 'bulma/css/bulma.css'
 
 import {getVersion} from "../api/apiCommon";
 import CopyToBoard from "../tools/copyToBoard";

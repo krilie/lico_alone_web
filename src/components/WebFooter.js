@@ -4,14 +4,15 @@ import IcpLabel from "./IcpLabel";
 class WebFooter extends Component {
     render() {
         return (
-            <footer style={{
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
                 padding: "1rem 1rem 1rem",
-                backgroundColor: "#ffffff"
+                backgroundColor: "transparent"
             }}>
-                <div className="content has-text-centered">
-                    <IcpLabel/>
-                </div>
-            </footer>
+                <IcpLabel/>
+            </div>
         );
     }
 }
