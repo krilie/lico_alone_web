@@ -85,8 +85,9 @@ class ArticleDetailPage extends Component {
                 <div style={{textAlign: "center"}}>{article.dislike}</div>
             </div>
 
-        const articleView = loading === false ?
+        return  loading === false ?
             <div className="article-detail-view">
+                <GoBackToolBar history={this.props.history}/>
                 <div dangerouslySetInnerHTML={{__html:article.content}}/>
                 <div className="article-view-thumbs-view">
                     {thumbsUpView}
@@ -95,10 +96,6 @@ class ArticleDetailPage extends Component {
             </div>
             :
             <div className="article-view-loading">loading...</div>
-        return <div>
-            <GoBackToolBar history={this.props.history}/>
-            {articleView}
-        </div>
     }
 }
 
