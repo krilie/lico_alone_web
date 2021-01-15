@@ -90,7 +90,7 @@ class Article extends React.Component {
     render() {
         const {loading, articleList, moreButtonText} = this.state;
         const loadMoreButton = <div>
-            <button disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
+            <button className="btn btn--load-more" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
         let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
         const searchButton = <div >

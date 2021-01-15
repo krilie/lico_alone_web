@@ -105,6 +105,12 @@
     color:#fff;
 }
 
+.btn--load-more{
+    margin: 10px;
+    background-color: #7df6c6;
+    color:#fff;
+}
+
 .btn--negative{
     background-color:#b33630;
     color:#fff;
