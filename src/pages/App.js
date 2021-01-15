@@ -52,7 +52,7 @@ class App extends React.Component {
                     {homeMenu}
                     {articleMenu}
                     {pictureMenu}
-                    <div style={{flexGrow: 1}}/>
+                    <div style={{flexGrow: 2}}/>
                     {aboutMenu}
                     <a className="menu-item" target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
                 </div>

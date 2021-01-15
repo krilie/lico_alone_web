@@ -1,37 +1,38 @@
 .app {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-flow: column nowrap;
+
+    justify-content: flex-start; /*都挤在前边*/
+    align-content: flex-start;  /*多主轴有效 多主轴对齐*/
+
     background-color: transparent;
     min-width: 550px;
 }
 
 .app .menu {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    flex-flow: row nowrap;
 
     background-color: #cae2e2;
 
     justify-content: center; /*元素居中*/
-    align-items: center;     /*交叉轴对齐*/
-    justify-items: center;   /*主轴对齐*/
+    align-items: center;     /*交叉轴对齐居中*/
+
+    justify-items: center;   /*和子项目在个自的空间上的对齐多式*/
 }
 
 .app .menu .menu-item {
-    flex-grow: 0;  /*不占用自身外空间*/
+    flex-grow: 0; /*不占用自身外空间*/
     flex-shrink: 0; /*不压缩自身空间*/
     /*flex-basis: 200px;*/ /*自身占用空间*/
 
-    height: 50px;
     padding: 5px;
     margin: 5px;
     font-size: 30px;
     font-weight: bold;
     font-family: 仿宋, serif;
     color: #c89932;
-
+    /*内容居中*/
     justify-content: center;
     align-items: center;
     display: flex;
@@ -42,7 +43,6 @@
     flex-shrink: 0;
     /*flex-basis: 200px;*/
 
-    height: 50px;
     padding: 5px;
     margin: 5px;
     font-size: 30px;
