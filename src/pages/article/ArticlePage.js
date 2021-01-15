@@ -73,17 +73,10 @@ class Article extends React.Component {
 
     articleSampleItem = (article, index) => {
         return (
-        <div key={index} onClick={() => this.props.history.push("/article/" + article.id)} className="article-item">
-            <div >
-                <div >
-                    #{index}
-                </div>
-                <div >
-                    <div><strong>{article.title}</strong><br/>{article.description}</div>
-                </div>
+            <div className="article-item" key={index} onClick={() => this.props.history.push("/article/" + article.id)}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>{index}.</div>
+                <div><strong>{article.title}</strong><br/>{article.description}</div>
             </div>
-            <div style={{marginTop: "2px"}}/>
-        </div>
         )
     }
 
@@ -93,8 +86,8 @@ class Article extends React.Component {
             <button className="btn btn--load-more" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
         </div>;
         let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
-        const searchButton = <div >
-            <input className="input" type="text" name="search_key"
+        const searchButton = <div style={{textAlign:"right",flexGrow:1,width:"500px"}}>
+            <input className="article-search-input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
                    onKeyUp={e => e.keyCode === 13 ? this.loadData(true) : null} // enter key
                    placeholder="输入关键字并按回车进行搜索"/>

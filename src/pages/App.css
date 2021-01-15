@@ -60,6 +60,7 @@
 
 .app .content {
     min-width: 550px;
+    margin: 10px;
 }
 
 .app .footer {

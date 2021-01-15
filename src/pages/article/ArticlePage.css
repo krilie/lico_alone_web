@@ -9,11 +9,34 @@
     justify-content: flex-start; /*都排列在上边*/
     align-items: flex-start; /*每个成员排列*/
     align-content: flex-start; /*整体排列*/
+    gap: 5px;
 }
 
 .article-view .article-item {
     display: flex;
+    flex-direction: row;
     align-content: flex-start;
+    gap: 10px;
     min-width: 500px;
     max-width: 500px;
+    background-color: #f6e8e8;
+    color: #ee945b;
+}
+
+.article-view .article-item:hover {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    gap: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    background-color: #f6e8e8;
+}
+
+.article-view .article-search-input {
+    color: #ee945b;
+    height: 25px;
+    font-size: 25px;
+    border-style: none;
 }
