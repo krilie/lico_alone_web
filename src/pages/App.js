@@ -62,7 +62,7 @@ class App extends React.Component {
                         <Route exact path={`/article`} component={ArticlePage}/>
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
                         <Route exact path={`/picture`} component={PictureHomePage}/>
-                        <Route exact path={`/picture/:picId/:hexPicUrl/:hexMessage`} component={SlidePictureDetail}/>
+                        <Route exact path={`/picture/:picId`} component={SlidePictureDetail}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
