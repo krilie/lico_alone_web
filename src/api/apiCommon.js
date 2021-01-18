@@ -4,6 +4,7 @@ export const getIcpInfo = () => commonGet("/api/common/icp_info");
 export const getVersion = () => commonGet("/api/common/version");
 export const postVisited = (traceId) => commonPostForm("/api/common/visited", {traceId: traceId});
 export const getAboutApp = () => commonGet("/api/common/about_app")
+
 export function getArticleSampleList(pageNum, pageSize, searchKey) {
     return commonGet("/api/common/article/query_sample", {
         page_num: pageNum,
@@ -19,3 +20,4 @@ export const removeDisLikeArticleById = (articleId) => commonPostForm("/api/comm
 export const removeLikeArticleById = (articleId) => commonPostForm("/api/common/article/mark/remove_like", {article_id: articleId})
 
 export const GetCarouselPicData = () => commonGet("/api/common/carousel/query")
+export const GetCarouselPicById = (id) => commonGet("/api/common/picture/" + id)

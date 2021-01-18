@@ -3,7 +3,6 @@ import "./PictureHomePage.css"
 import {GetCarouselPicData} from "../../api/apiCommon";
 import {checkResDataWithToast, imageProxied} from "../../api/apiBase";
 import {Link} from "react-router-dom";
-import {stringToHex} from "../../tools/strUtil";
 
 class PictureHomePage extends Component {
 
@@ -34,9 +33,8 @@ class PictureHomePage extends Component {
     render() {
         const {data} = this.state;
         const picViews = data.map(val => {
-                const detailPage = `/picture/${val.id}/${stringToHex(val.url)}/${stringToHex(val.message)}`
                 return <div key={val.id} className="pic-item">
-                    <Link to={detailPage} target="_parent">
+                    <Link to={`/picture/${val.id}`} target="_parent">
                         <img className="pic-item-pic" src={imageProxied(val.url, "800x600,fit")} alt={"img"}/>
                         <div className="pic-item-msg">{val.message}</div>
                     </Link>
