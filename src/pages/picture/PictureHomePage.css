@@ -17,4 +17,19 @@
     flex-shrink: 1;
     flex-basis: auto; /*主轴大小*/
     align-self: flex-start;
+    position: relative;
+}
+
+.pic-home .pic-item-pic{
+    padding: 0;
+    margin: 0;
+}
+.pic-home .pic-item-msg{
+    background-color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    top: 10px;
+    color: white;
+    font-weight: bold;
 }
