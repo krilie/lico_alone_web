@@ -41,17 +41,21 @@ class Catchword extends Component {
             return (
                 <div className="catchword-item">
                     <div style={{fontWeight: 500}}>{createDateShow}</div>
-                    <div style={{fontWeight: 900,fontSize:20}}>{v.title} {v.content}</div>
+                    <div style={{fontWeight: 900, fontSize: 20}}>{v.title} {v.content}</div>
                 </div>
             )
         })
 
         return (
             <div className="catchword-view">
+                <div>热词</div>
                 {catchwordView}
-                <button className="btn btn--load-more" onClick={() => {
-                    this.loadMoreData()
-                }}>更多
+                <button style={{width: "100px"}}
+                        className="btn btn--load-more"
+                        onClick={() => {
+                            this.loadMoreData()
+                        }}>
+                    更多
                 </button>
             </div>
         );

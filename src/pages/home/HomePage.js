@@ -3,6 +3,7 @@ import ArticlePage from "../article/ArticlePage";
 import AppVersion from "../../components/AppVersion";
 import SlidePictures from "../picture/SlidePictures";
 import "./HomePage.css"
+import Catchword from "../catchword/Catchword";
 
 class HomePage extends Component {
     render() {
@@ -11,6 +12,7 @@ class HomePage extends Component {
                 <div className="home-page">
                     <div className="article">
                         <ArticlePage/>
+                        <Catchword/>
                     </div>
                     <div className="slider">
                         <AppVersion/>
