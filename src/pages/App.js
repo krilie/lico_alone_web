@@ -11,6 +11,7 @@ import ArticleDetailPage from "./article/ArticleDetailPage";
 import SlidePictureDetail from "./picture/SlidePictureDetail";
 import PictureHomePage from "./picture/PictureHomePage";
 import {checkResDataWithToast} from "../api/apiBase";
+import Catchword from "./catchword/Catchword";
 
 class App extends React.Component {
 
@@ -44,6 +45,7 @@ class App extends React.Component {
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")
         const pictureMenu = this.buildMenu(pathname, "/picture", "图片")
+        const catchwordMenu = this.buildMenu(pathname, "/catchword", "流行")
         const aboutMenu = this.buildMenu(pathname, "/about", "关于")
         return (
             <div className="app">
@@ -52,6 +54,7 @@ class App extends React.Component {
                     {homeMenu}
                     {articleMenu}
                     {pictureMenu}
+                    {catchwordMenu}
                     <div style={{flexGrow: 2}}/>
                     {aboutMenu}
                     <a className="menu-item" target="_blank" rel="noreferrer" href="https://manage-app.lizo.top">M</a>
@@ -63,6 +66,7 @@ class App extends React.Component {
                         <Route path={`/article/:articleId`} component={ArticleDetailPage}/>
                         <Route exact path={`/picture`} component={PictureHomePage}/>
                         <Route exact path={`/picture/:picId`} component={SlidePictureDetail}/>
+                        <Route exact path={`/catchword`} component={Catchword}/>
                         <Route path={`/about`} component={AboutPage}/>
                     </Switch>
                 </div>
