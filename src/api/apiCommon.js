@@ -22,4 +22,4 @@ export const removeLikeArticleById = (articleId) => commonPostForm("/api/common/
 export const GetCarouselPicData = () => commonGet("/api/common/carousel/query")
 export const GetCarouselPicById = (id) => commonGet("/api/common/picture/" + id)
 
-export const GetCatchwordDataList = (key_word,form,limit) => commonGet("/api/common/catchword/query",{key_word,form,limit})
+export const GetCatchwordDataList = (key_word,from,limit) => commonGet("/api/common/catchword/query",{key_word,from,limit})
