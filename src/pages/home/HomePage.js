@@ -12,11 +12,11 @@ class HomePage extends Component {
                 <div className="home-page">
                     <div className="article">
                         <ArticlePage/>
-                        <Catchword/>
                     </div>
                     <div className="slider">
                         <AppVersion/>
                         <SlidePictures/>
+                        <Catchword/>
                     </div>
                 </div>
             </div>
