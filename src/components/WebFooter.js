@@ -31,7 +31,7 @@ class WebFooter extends Component {
                 backgroundColor: "transparent"
             }}>
                 <div style={{color:"#1acaef"}}>@ 2019-2021 {this.state.domain} 版权所有</div>
-                <pre>    </pre>
+                <pre style={{backgroundColor:"transparent"}}>    </pre>
                 <div className="icpLabelDiv">
                     <a style={{textDecoration:"none"}} title={this.state.label}
                        href={this.state.link}
