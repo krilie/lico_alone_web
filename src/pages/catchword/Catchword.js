@@ -37,7 +37,7 @@ class Catchword extends Component {
 
         const catchwordView = data.map(v => {
             const createData = new Date(v.created_at)
-            const createDateShow = createData.getFullYear() + '年 ' + createData.getMonth() + '月' + createData.getDay() + '日'
+            const createDateShow = createData.getFullYear() + '年 ' + createData.getMonth()+1 + '月' + createData.getDate() + '日'
             return (
                 <div className="catchword-item">
                     <div style={{fontWeight: 500}}>{createDateShow}</div>
