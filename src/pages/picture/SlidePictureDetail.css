@@ -1,0 +1,23 @@
+.pic-view {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pic-view .slide-image-message {
+    background-color: rgba(62, 61, 61, 0.25);
+    left: 10px;
+    top: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.pic-view .slide-image-item {
+    position: relative;
+}
+
+.pic-view .slide-image-img {
+    cursor: pointer;
+}

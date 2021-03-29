@@ -1,0 +1,23 @@
+.catchword-view{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 10px;
+    color: #ee945b;
+    padding: 20px;
+}
+
+.catchword-item {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 10px;
+    color: #923a07;
+    background-color: #f9fffa;
+}
+
+.btn--load-more{
+    margin: 10px;
+    background-color: #ef7979;
+    color: #eed7d7;
+}
