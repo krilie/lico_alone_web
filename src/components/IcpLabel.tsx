@@ -4,7 +4,7 @@ import "./Icplable.css"
 export default class IcpLabel extends React.Component {
 
     render() {
-        const {name, link, label} = this.props;
+        const {name, link, label}: Readonly<any> = this.props;
         return (
             <a className="icpLabelDiv"
                title={label}

@@ -15,23 +15,26 @@ import Catchword from "./catchword/Catchword";
 
 class App extends React.Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {
+            // @ts-ignore
             pathname: `${this.props.location.pathname}`
         }
     }
 
     componentDidMount() {
         process.nextTick(() => {
+            // @ts-ignore
             if (this.state.pathname === "/")
+                // @ts-ignore
                 this.props.history.push(`/home`);
             postVisited(GetCustomerTraceId()).then(checkResDataWithToast)
         })
 
     }
 
-    buildMenu = (selected, menuPath, menuName) => {
+    buildMenu = (selected: string, menuPath: string, menuName: string) => {
         const hrefName = `${menuPath}`
         if (selected === menuPath) {
             return <a style={{color: "#fc8a8a"}} className="menu-item" href={hrefName}>{menuName}</a>
@@ -41,6 +44,7 @@ class App extends React.Component {
     }
 
     render() {
+        // @ts-ignore
         const pathname = this.props.location.pathname
         const homeMenu = this.buildMenu(pathname, "/home", "主页")
         const articleMenu = this.buildMenu(pathname, "/article", "文档")

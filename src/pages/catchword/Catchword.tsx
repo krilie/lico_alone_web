@@ -4,7 +4,7 @@ import {checkResDataWithToast} from "../../api/apiBase";
 import "./Catchword.css"
 
 class Catchword extends Component {
-    constructor(props) {
+    constructor(props:any) {
         super(props);
         this.state = {
             batch_size: 10,
@@ -19,7 +19,7 @@ class Catchword extends Component {
     }
 
     loadMoreData() {
-        let {batch_size, data} = this.state
+        let {batch_size, data}: Readonly<any> = this.state
         this.setState({loading: true})
         GetCatchwordDataList("", data.length, batch_size).then(res => {
             const dataGeted = checkResDataWithToast(res);
@@ -32,10 +32,10 @@ class Catchword extends Component {
     }
 
     render() {
-        const {data, loading} = this.state
+        const {data, loading}: Readonly<any> = this.state
         if (loading) return <div>loading...</div>
 
-        const catchwordView = data.map(v => {
+        const catchwordView = data.map((v:any) => {
             const createData = new Date(v.created_at)
             const createDateShow = createData.getFullYear() + '年 ' + (createData.getMonth()+1) + '月' + createData.getDate() + '日'
             return (

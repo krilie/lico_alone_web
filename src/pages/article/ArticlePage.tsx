@@ -7,7 +7,7 @@ import {checkResDataWithToast} from "../../api/apiBase";
 
 class Article extends React.Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
 
         this.state = {
@@ -29,15 +29,15 @@ class Article extends React.Component {
         };
     }
 
-    updateSearchKey = (searchKey) => {
+    updateSearchKey = (searchKey: string) => {
         this.setState({
             searchKey: searchKey
         })
     }
 
-    loadData = (reset) => {
-        let {nowPage, articleList, pageSize, searchKey} = this.state
-        if (reset === true) {
+    loadData = (reset: boolean) => {
+        let {nowPage, articleList, pageSize, searchKey}: Readonly<any> = this.state
+        if (reset) {
             nowPage = 0;
             articleList = []
         }
@@ -71,22 +71,26 @@ class Article extends React.Component {
             })
     }
 
-    articleSampleItem = (article, index) => {
+    articleSampleItem = (article: any, index: number) => {
         return (
-            <div className="article-item" key={index} onClick={() => this.props.history.push("/article/" + article.id)}>
-                <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>{index}.</div>
+            <div className="article-item" key={index} onClick={() => {
+                // @ts-ignore
+                this.props.history.push("/article/" + article.id)
+            }}>
+                <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>{index}.</div>
                 <div><strong>{article.title}</strong><br/>{article.description}</div>
             </div>
         )
     }
 
     render() {
-        const {loading, articleList, moreButtonText} = this.state;
+        const {loading, articleList, moreButtonText}: Readonly<any> = this.state;
         const loadMoreButton = <div>
-            <button className="btn btn--load-more" disabled={loading} onClick={this.loadData}>{moreButtonText}</button>
+            <button className="btn btn--load-more" disabled={loading}
+                    onClick={_ => this.loadData(true)}>{moreButtonText}</button>
         </div>;
-        let articleListView = articleList.map((article, index) => this.articleSampleItem(article, index))
-        const searchButton = <div style={{textAlign:"right",flexGrow:1,width:"500px"}}>
+        let articleListView = articleList.map((article:any, index:number) => this.articleSampleItem(article, index))
+        const searchButton = <div style={{textAlign: "right", flexGrow: 1, width: "500px"}}>
             <input className="article-search-input" type="text" name="search_key"
                    onChange={event => this.updateSearchKey(event.target.value)}
                    onKeyUp={e => e.keyCode === 13 ? this.loadData(true) : null} // enter key
@@ -104,4 +108,5 @@ class Article extends React.Component {
 
 }
 
+// @ts-ignore
 export default withRouter(Article)

@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 class PictureHomePage extends Component {
 
-    constructor(props) {
+    constructor(props:any) {
         super(props);
         // id-message-url-is_on_show[true]
         this.state = {data: []};
@@ -31,8 +31,8 @@ class PictureHomePage extends Component {
     }
 
     render() {
-        const {data} = this.state;
-        const picViews = data.map(val => {
+        const {data}: Readonly<any> = this.state;
+        const picViews = data.map((val:any) => {
                 return <div key={val.id} className="pic-item">
                     <Link to={`/picture/${val.id}`} target="_parent">
                         <img className="pic-item-pic" src={imageProxied(val.url, "800x600,fit")} alt={"img"}/>

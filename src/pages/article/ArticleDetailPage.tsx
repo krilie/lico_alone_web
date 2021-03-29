@@ -11,11 +11,12 @@ import {checkIsSuccessWithToast, checkResDataWithToast} from "../../api/apiBase"
 
 class ArticleDetailPage extends Component {
 
-    constructor(props) {
+    constructor(props:any) {
         super(props);
         this.state = {
             article: {},
             loading: true,
+            // @ts-ignore
             articleId: this.props.match.params.articleId,
         }
     }
@@ -31,7 +32,7 @@ class ArticleDetailPage extends Component {
 
     loadArticle = () => {
         this.setState({loading: true})
-        const {articleId} = this.state
+        const {articleId}: Readonly<any> = this.state
         getArticleById(articleId).then(res => {
             const data = checkResDataWithToast(res);
             if (data !== undefined) {
@@ -45,25 +46,25 @@ class ArticleDetailPage extends Component {
         })
     }
 
-    like = (articleId) => {
+    like = (articleId:string) => {
         this.setState({loading: true})
         likeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
-    disLike = (articleId) => {
+    disLike = (articleId:string) => {
         this.setState({loading: true})
         disLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
-    removeLike = (articleId) => {
+    removeLike = (articleId:string) => {
         this.setState({loading: true})
         removeLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
-    removeDisLike = (articleId) => {
+    removeDisLike = (articleId:string) => {
         this.setState({loading: true})
         removeDisLikeArticleById(articleId).then(res => checkIsSuccessWithToast(res)).finally(() => this.loadArticle())
     }
 
     render() {
-        const {article, loading} = this.state
+        const {article, loading}: Readonly<any> = this.state
         const thumbsUpView = article.has_like ?
             <div onClick={e => this.removeLike(article.id)} className="thumbs-has-view">
                 <FiThumbsUp size={30}/>
@@ -87,7 +88,10 @@ class ArticleDetailPage extends Component {
 
         return  loading === false ?
             <div className="article-detail-view">
-                <GoBackToolBar history={this.props.history}/>
+                <GoBackToolBar history={
+                    // @ts-ignore
+                    this.props.history
+                }/>
                 <div dangerouslySetInnerHTML={{__html:article.content}}/>
                 <div className="article-view-thumbs-view">
                     {thumbsUpView}

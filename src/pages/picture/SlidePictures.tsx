@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 import {checkResDataWithToast, imageProxied} from "../../api/apiBase";
 
 class SlidePictures extends React.Component {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         // id: "2b995ee9-f2e8-4dfc-b997-748b79f247a3"
         // created_at: "2020-06-20T15:26:07+08:00"
@@ -41,7 +41,7 @@ class SlidePictures extends React.Component {
     }
 
     render() {
-        const {data} = this.state
+        const {data}: Readonly<any> = this.state
         const settings = {
             dots: true,
             infinite: true,
@@ -56,10 +56,10 @@ class SlidePictures extends React.Component {
             pauseOnHover: true,
             focusOnSelect: true,
         };
-        const slideImages = data.map(val => {
+        const slideImages = data.map((val: any) => {
             return (
                 <li key={val.id} className="slide-image-item">
-                    <Link  to={`/picture/${val.id}`} target="_parent">
+                    <Link to={`/picture/${val.id}`} target="_parent">
                         <img className="slide-image-img" src={imageProxied(val.url, "400x300,fit")} alt={"img"}/>
                         <div className="slide-image-message">{val.message}</div>
                     </Link>
@@ -67,14 +67,15 @@ class SlidePictures extends React.Component {
             )
         });
 
+        // @ts-ignore
+        const slider = <Slider {...settings}>
+            {slideImages}
+        </Slider>;
         return <div className="slide-image-viewer">
-            <Slider {...settings}>
-                {slideImages}
-            </Slider>
+            {slider}
         </div>
     }
 }
 
-SlidePictures.propTypes = {};
 
 export default SlidePictures;

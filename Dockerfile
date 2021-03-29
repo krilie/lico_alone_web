@@ -1,4 +1,4 @@
-FROM node:10-slim as webBuilder
+FROM node:14-slim as webBuilder
 MAINTAINER livo
 ADD ./ /web
 WORKDIR /web

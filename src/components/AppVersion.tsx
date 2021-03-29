@@ -5,7 +5,7 @@ import {getVersion} from "../api/apiCommon";
 import CopyToBoard from "../tools/copyToBoard";
 
 export default class AppVersion extends React.Component {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {build_time: "", git_commit: "", go_version: "", version: ""}
     }
@@ -29,12 +29,12 @@ export default class AppVersion extends React.Component {
         };
     }
 
-    copyText = (text) => {
+    copyText = (text: string) => {
         CopyToBoard(text)
     }
 
     render() {
-        const {build_time, git_commit, go_version, version} = this.state;
+        const {build_time, git_commit, go_version, version}: Readonly<any> = this.state;
         const buildTime = <div title={build_time}>构建时间:&nbsp;&nbsp;{build_time}</div>
         const gitCommit = <div title={"点击复制 " + git_commit} onClick={() => this.copyText(git_commit)}>
             散列值:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="pointer-able">{git_commit}</span>

@@ -12,7 +12,7 @@ export function GetCustomerTraceId() {
     return traceId;
 }
 
-export function SetCustomerTraceId(id) {
+export function SetCustomerTraceId(id: string) {
     store.set(UserTraceId, id)
 }
 
@@ -21,7 +21,7 @@ export function SetCustomerTraceId(id) {
  * @returns {string} 返回字符串
  */
 function generateUUID() {
-    const s = [];
+    const s: any[] = [];
     const hexDigits = "0123456789abcdef";
     for (let i = 0; i < 36; i++) {
         s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);

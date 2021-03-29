@@ -5,7 +5,7 @@ import {checkResDataWithToast} from "../api/apiBase";
 class WebFooter extends Component {
 
     state = {
-        name: "", link: "", label: "",domain:""
+        name: "", link: "", label: "", domain: ""
     }
 
     componentDidMount() {
@@ -30,10 +30,10 @@ class WebFooter extends Component {
                 padding: "1rem 1rem 1rem",
                 backgroundColor: "transparent"
             }}>
-                <div style={{color:"#1acaef"}}>© 2019-2021 {this.state.domain} 版权所有</div>
-                <pre style={{backgroundColor:"transparent"}}>    </pre>
+                <div style={{color: "#1acaef"}}>© 2019-2021 {this.state.domain} 版权所有</div>
+                <pre style={{backgroundColor: "transparent"}}>    </pre>
                 <div className="icpLabelDiv">
-                    <a style={{textDecoration:"none"}} title={this.state.label}
+                    <a style={{textDecoration: "none"}} title={this.state.label}
                        href={this.state.link}
                        target="_blank"
                        rel="noopener noreferrer">ICP证:&nbsp;&nbsp;{this.state.name}</a>

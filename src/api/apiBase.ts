@@ -2,16 +2,16 @@ import {ToastErr, ToastWarn} from "../tools/toastNormal";
 import axios from "axios";
 import qs from "qs";
 
-let apiBaseUrl = process.env.NODE_ENV === "development"?"":'https://api-app.lizo.top';
+let apiBaseUrl = process.env.NODE_ENV === "development" ? "" : 'https://api-app.lizo.top';
 export const imageProxy = 'https://imageproxy.lizo.top' // 缩略图地址
 export const minioUrl = 'https://minio.lizo.top' // minio地址
-export const imageProxied = (path, ops) => imageProxy + "/" + ops + "/" + path.replace(minioUrl + "/", "")
+export const imageProxied = (path: string, ops: string) => imageProxy + "/" + ops + "/" + path.replace(minioUrl + "/", "")
 
 // res.data is returned data from api with have filed [code message data]
-export const checkResData = (res) => res.data.code === 2000 ? res.data.data : undefined;
-export const getResData = (res) => checkResData(res) ? res.data.data : undefined;
-export const checkIsNotFound = (res) => res.data.code === 4004;
-export const checkResDataWithToast = (res) => {
+export const checkResData = (res: any) => res.data.code === 2000 ? res.data.data : undefined;
+export const getResData = (res: any) => checkResData(res) ? res.data.data : undefined;
+export const checkIsNotFound = (res: any) => res.data.code === 4004;
+export const checkResDataWithToast = (res: any) => {
     if (res.data.code !== 2000) {
         ToastWarn(res.data.message);
         return undefined;
@@ -19,7 +19,7 @@ export const checkResDataWithToast = (res) => {
         return res.data.data;
     }
 }
-export const checkIsSuccessWithToast = (res) => {
+export const checkIsSuccessWithToast = (res: any) => {
     if (res.data.code !== 2000) {
         ToastWarn(res.data.message);
         return false;
@@ -29,14 +29,14 @@ export const checkIsSuccessWithToast = (res) => {
 }
 
 // 非api 外层返回结构可能不统一
-const apiCommon = axios.create({baseURL: apiBaseUrl,withCredentials:true})
+const apiCommon = axios.create({baseURL: apiBaseUrl, withCredentials: true})
 
 // 返回后拦截
 apiCommon.interceptors.response.use(
-    data => {
+    (data: any) => {
         return data
     },
-    err => {
+    (err: any) => {
         if (err.response !== undefined && err.response !== null) {
             if (err.response.status === 502 || err.response.status === 504) {
                 ToastErr("网关错误");
@@ -56,7 +56,7 @@ apiCommon.interceptors.response.use(
     }
 );
 
-export const commonGet = (url, query) => {
+export const commonGet = (url: string, query?: object) => {
     return apiCommon({
         method: "get",
         url: query === undefined ? `${url}` : `${url}?${qs.stringify(query)}`,
@@ -65,7 +65,7 @@ export const commonGet = (url, query) => {
 
 
 // @RequestBody请求
-export const commonPostJson = (url, params) => {
+export const commonPostJson = (url: string, params: object) => {
     return apiCommon({
         method: "post",
         url: `${url}`,
@@ -78,7 +78,7 @@ export const commonPostJson = (url, params) => {
 };
 
 // @RequestParam请求
-export const commonPostQuery = (url, params) => {
+export const commonPostQuery = (url: string, params: object) => {
     return apiCommon({
         params: params,
         method: "post",
@@ -88,7 +88,7 @@ export const commonPostQuery = (url, params) => {
 
 
 // @RequestParam请求
-export const commonPostForm = (url, params) => {
+export const commonPostForm = (url: string, params: object) => {
     return apiCommon({
         method: "post",
         url: `${url}`,
@@ -97,7 +97,7 @@ export const commonPostForm = (url, params) => {
     });
 };
 
-export const commonGetQuery = (url, query) => {
+export const commonGetQuery = (url: string, query?: object) => {
     console.log(query)
     return apiCommon({
         method: "get",
@@ -105,7 +105,7 @@ export const commonGetQuery = (url, query) => {
     });
 };
 
-export const commonPostMultiForm = (url, params) => {
+export const commonPostMultiForm = (url: string, params: any) => {
     let param = new window.FormData();
     for (let i in params) {
         param.append(i, params[i]);
