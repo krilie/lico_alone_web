@@ -14,9 +14,11 @@ class HomePage extends Component {
                         <ArticlePage/>
                     </div>
                     <div className="slider">
+                        <Catchword/>
+                    </div>
+                    <div className="slider2">
                         <AppVersion/>
                         <SlidePictures/>
-                        <Catchword/>
                     </div>
                 </div>
             </div>
