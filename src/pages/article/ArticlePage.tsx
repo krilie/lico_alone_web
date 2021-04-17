@@ -77,8 +77,7 @@ class Article extends React.Component {
                 // @ts-ignore
                 this.props.history.push("/article/" + article.id)
             }}>
-                <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>{index}.</div>
-                <div><strong>{article.title}</strong><br/>{article.description}</div>
+                <div><strong>{index}.{article.title}</strong><br/>{article.description}</div>
             </div>
         )
     }
